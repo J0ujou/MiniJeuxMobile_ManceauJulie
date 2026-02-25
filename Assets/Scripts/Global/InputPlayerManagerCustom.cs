@@ -19,6 +19,7 @@ public class InputPlayerManagerCustom : MonoBehaviour
   private Vector2 endPosition;
 
   private InputAction _tapAction;
+  private InputAction _swipeAction;
 
   private void Start()
   {
@@ -26,6 +27,7 @@ public class InputPlayerManagerCustom : MonoBehaviour
     height = Screen.height;
     
     _tapAction = InputSystem.actions.FindAction("Tap");
+    _swipeAction = InputSystem.actions.FindAction("Swipe");
   }
 
   //public void OnTap()
@@ -39,7 +41,8 @@ public class InputPlayerManagerCustom : MonoBehaviour
     {
       return;
     }
-    Touch touch = _tapAction.ReadValue<Touch>();
+    //Touch touch = _tapAction.ReadValue<Touch>();
+    Touch touch = _swipeAction.ReadValue<Touch>();
     if (touch.phase == TouchPhase.Began)
     {
       startPosition = touch.screenPosition;
