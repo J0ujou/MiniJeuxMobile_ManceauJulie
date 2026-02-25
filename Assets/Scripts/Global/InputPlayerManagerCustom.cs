@@ -17,6 +17,7 @@ public class InputPlayerManagerCustom : MonoBehaviour
   
   private Vector2 startPosition;
   private Vector2 endPosition;
+  private bool swipedetected = false;
 
   private InputAction _tapAction;
   private InputAction _swipeAction;
@@ -28,6 +29,12 @@ public class InputPlayerManagerCustom : MonoBehaviour
     
     _tapAction = InputSystem.actions.FindAction("Tap");
     _swipeAction = InputSystem.actions.FindAction("Swipe");
+    UnityEngine.InputSystem.EnhancedTouch.EnhancedTouchSupport.Enable();
+  }
+  
+  private void OnDisable()
+  {
+    UnityEngine.InputSystem.EnhancedTouch.EnhancedTouchSupport.Disable();
   }
 
   //public void OnTap()
@@ -39,18 +46,27 @@ public class InputPlayerManagerCustom : MonoBehaviour
   {
     if (Touch.activeTouches.Count <= 0)
     {
+      
       return;
     }
     //Touch touch = _tapAction.ReadValue<Touch>();
-    Touch touch = _swipeAction.ReadValue<Touch>();
+    //Touch touch = _swipeAction.ReadValue<Touch>();
+    Touch touch = Touch.activeTouches[0];
     if (touch.phase == TouchPhase.Began)
     {
       startPosition = touch.screenPosition;
+      swipedetected = false;
     }
     else if (touch.phase == TouchPhase.Moved)
     {
       endPosition = touch.screenPosition;
-      OnSwipe();
+    }
+    else if (touch.phase == TouchPhase.Ended && !swipedetected)
+    {
+      endPosition = touch.screenPosition;
+       OnSwipe();
+      swipedetected = true;
+      _isTouching = false;
     }
     
     // if (Input.touchCount > 0)
