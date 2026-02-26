@@ -10,8 +10,10 @@ public class UI_Panel : MonoBehaviour
   [SerializeField] private GameObject highscorePanel;
   [SerializeField] private ScoreDatas scoreDatas;
   public GameObject loosePanel;
+  public GameObject levelUpPanel;
   [SerializeField] private TMP_Text highscoreText;
   [SerializeField] private TMP_Text scoreText;
+  [SerializeField] private PlayerCollect playerCollect;
   public bool LooseGameNWatch = false;
 
   public event Action Stop;
@@ -19,7 +21,7 @@ public class UI_Panel : MonoBehaviour
   
   private void Start()
   {
-    //playerDatas.LoadDatas();
+    playerDatas.LoadDatas();
     highscorePanel.SetActive(false);
     loosePanel.SetActive(false);
     highscoreText.gameObject.SetActive(false);
@@ -27,13 +29,20 @@ public class UI_Panel : MonoBehaviour
   private void OnEnable()
   {
     ObjectMovement.Loose += ShowLoosePanel;
+    playerCollect.OnLevelUp += ShowLevelUp;
   }
 
   private void OnDisable()
   {
     ObjectMovement.Loose -= ShowLoosePanel;
+    playerCollect.OnLevelUp -= ShowLevelUp;
   }
-  
+
+
+  public void ShowLevelUp()
+  {
+    levelUpPanel.SetActive(true);
+  }
   public void ShowLoosePanel()
   {
     loosePanel.SetActive(true);
@@ -53,8 +62,8 @@ public class UI_Panel : MonoBehaviour
     if (playerDatas.IsHighscore(gameName, scoreDatas.ScoreValue))
     {
       playerDatas.AddHighscore(gameName, playerDatas.Name, scoreDatas.ScoreValue);
-      scoreText.text = $"Score: {scoreDatas.ScoreValue}";
     }
+    scoreText.text = $"Score: {scoreDatas.ScoreValue}";
     //if (highscorePanel != null)
     //{
       //highscorePanel.SetActive(true);

@@ -1,4 +1,4 @@
-using TMPro;
+ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,5 +15,6 @@ public class PlayerNamePanel : MonoBehaviour
     public void SaveDatasInSO()
     {
         playerDatas.Name = playerInputField.text;
+        playerDatas.SaveDatas();
     }
 }

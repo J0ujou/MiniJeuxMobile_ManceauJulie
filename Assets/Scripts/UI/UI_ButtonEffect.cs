@@ -19,4 +19,9 @@ public class UI_ButtonEffect : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void OpenGameNWatch()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

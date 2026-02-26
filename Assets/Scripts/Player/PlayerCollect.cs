@@ -10,8 +10,7 @@ public class PlayerCollect : MonoBehaviour
 
 // Events
   public static Action<int> OntargetCollected;
-  // plus utile car seule les points sont affichés
-  public static Action <int> OnLevelUp;
+  public event Action OnLevelUp;
   public event Action LevelUpDifficulty;
 
   public void UpdateScore(int value)
@@ -24,7 +23,7 @@ public class PlayerCollect : MonoBehaviour
     {
       //_scoreDatas.Level += 1;
       //_playerDatas.Level = _scoreDatas.Level
-      //OnLevelUp.Invoke(_scoreDatas.Level);
+      OnLevelUp?.Invoke();
       //_scoreDatas.ScoreValue = 0;
       //_playerDatas.Score = _scoreDatas.ScoreValue;
       LevelUpDifficulty?.Invoke();

@@ -11,13 +11,11 @@ public class UI_Score : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerCollect.OnLevelUp += UpdateLevel;
         PlayerCollect.OntargetCollected += UpdateScore;
     }
 
     private void OnDisable()
     {
-        PlayerCollect.OnLevelUp -= UpdateLevel;
         PlayerCollect.OntargetCollected -= UpdateScore;
     }
 
