@@ -43,7 +43,7 @@ public class TimeManager : MonoBehaviour
     //_timeStepDuration -= 0.2f;
     spawner.ReduceSpawnDelay();
   }
-  private void StartTime()
+  public void StartTime()
   {
     if (_timerCoroutine == null)
     {

@@ -25,6 +25,7 @@ public class UI_Panel : MonoBehaviour
     highscorePanel.SetActive(false);
     loosePanel.SetActive(false);
     highscoreText.gameObject.SetActive(false);
+    timeManager.StopTime();
   }
   private void OnEnable()
   {
