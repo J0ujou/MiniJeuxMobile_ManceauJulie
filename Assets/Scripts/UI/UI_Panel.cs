@@ -4,10 +4,19 @@ using UnityEngine;
 public class UI_Panel : MonoBehaviour
 {
   [SerializeField] TimeManager timeManager;
+  [SerializeField] private SO_PlayerDatas playerDatas;
+  [SerializeField] private string gameName = "GameNWatch";
+  [SerializeField] private GameObject highscorePanel;
+  [SerializeField] private ScoreDatas scoreDatas;
   public GameObject loosePanel;
 
   public event Action Stop;
   public event Action SaveScore;
+  
+  private void Awake()
+  {
+    playerDatas.LoadDatas();
+  }
   private void OnEnable()
   {
     ObjectMovement.Loose += ShowLoosePanel;
@@ -17,17 +26,24 @@ public class UI_Panel : MonoBehaviour
   {
     ObjectMovement.Loose -= ShowLoosePanel;
   }
-
+  
   public void ShowLoosePanel()
   {
     loosePanel.SetActive(true);
     Stop?.Invoke();
     SaveScore?.Invoke();
+    EndGame();
   }
-
-  public void ShowHighScore()
+  
+  public void EndGame()
   {
-    // si le score actuel est plus grand que l'autre alors highscore
-    // voir après pour faire un tableau
+    if (playerDatas.IsHighscore(gameName, scoreDatas.ScoreValue))
+    {
+      playerDatas.AddHighscore(gameName, playerDatas.Name, scoreDatas.ScoreValue);
+    }
+    if (highscorePanel != null)
+    {
+      highscorePanel.SetActive(true);
+    }
   }
 }
