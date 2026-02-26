@@ -43,6 +43,7 @@ public class SO_PlayerDatas : ScriptableObject
         datas.Name = Name;
         datas.Score = Score;
         datas.Level = Level;
+        
         datas.highscoresRNJ = highscoresRNJ;
         datas.highscoresGNW = highscoresGNW;
         datas.highscoresSG = highscoresSG;
@@ -79,7 +80,6 @@ public class SO_PlayerDatas : ScriptableObject
             
             // Sauvegarder automatiquement
             SaveDatas();
-            Debug.Log($"Highscore ajouté pour {gameName} : {playerName} - {scoreValue}. Total: {targetList.Count} entrées");
         }
     }
         
@@ -95,6 +95,15 @@ public class SO_PlayerDatas : ScriptableObject
         
         // Sinon, vérifier si le score est meilleur que le 10ème
         return scoreValue > targetList[targetList.Count - 1].Score;
+    }
+
+    public bool IsBestScore(string gameName, int scoreValue)
+    {
+        List<HighscoreEntry> targetList = GetHighscoreList(gameName);
+        // rien faire si c'est le premier score inscrit
+        if (targetList == null || targetList.Count == 0) return true;
+        // vérifier si le score est meilleur que le premier
+        return scoreValue > targetList[0].Score;
     }
     
     /// Récupère la liste des highscores pour un jeu donné
@@ -114,6 +123,7 @@ public class SO_PlayerDatas : ScriptableObject
         }
     }
 
+    // pas utile
     private void SetHighscoreList(string gameName, List<HighscoreEntry> newList)
     {
         switch (gameName)

@@ -10,6 +10,7 @@ public class InputPlayerManagerCustom : MonoBehaviour
   public event Action OnMoveRight; // event dispatcher right
 
   [SerializeField] private float  _tapDuration = 1.0f;
+  [SerializeField] UI_Panel uiPanel;
   private float _tapTimer = 0.0f;
   private bool _isTouching = false;
   private float width = 0.0f;
@@ -46,29 +47,36 @@ public class InputPlayerManagerCustom : MonoBehaviour
   {
     if (Touch.activeTouches.Count <= 0)
     {
-      
       return;
     }
-    //Touch touch = _tapAction.ReadValue<Touch>();
-    //Touch touch = _swipeAction.ReadValue<Touch>();
-    Touch touch = Touch.activeTouches[0];
-    if (touch.phase == TouchPhase.Began)
+
+    if (uiPanel.LooseGameNWatch)
     {
-      startPosition = touch.screenPosition;
-      swipedetected = false;
+      return;
     }
-    else if (touch.phase == TouchPhase.Moved)
+    else
     {
-      endPosition = touch.screenPosition;
+      //Touch touch = _tapAction.ReadValue<Touch>();
+      //Touch touch = _swipeAction.ReadValue<Touch>();
+      Touch touch = Touch.activeTouches[0];
+      if (touch.phase == TouchPhase.Began)
+      {
+        startPosition = touch.screenPosition;
+        swipedetected = false;
+      }
+      else if (touch.phase == TouchPhase.Moved)
+      {
+        endPosition = touch.screenPosition;
+      }
+      else if (touch.phase == TouchPhase.Ended && !swipedetected)
+      {
+        endPosition = touch.screenPosition;
+        OnSwipe();
+        swipedetected = true;
+        _isTouching = false;
+      }
     }
-    else if (touch.phase == TouchPhase.Ended && !swipedetected)
-    {
-      endPosition = touch.screenPosition;
-       OnSwipe();
-      swipedetected = true;
-      _isTouching = false;
-    }
-    
+
     // if (Input.touchCount > 0)
     // {
     //   Touch firstTouch = Input.GetTouch(0);

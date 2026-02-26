@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class UI_Panel : MonoBehaviour
@@ -9,13 +10,19 @@ public class UI_Panel : MonoBehaviour
   [SerializeField] private GameObject highscorePanel;
   [SerializeField] private ScoreDatas scoreDatas;
   public GameObject loosePanel;
+  [SerializeField] private TMP_Text highscoreText;
+  [SerializeField] private TMP_Text scoreText;
+  public bool LooseGameNWatch = false;
 
   public event Action Stop;
   public event Action SaveScore;
   
-  private void Awake()
+  private void Start()
   {
-    playerDatas.LoadDatas();
+    //playerDatas.LoadDatas();
+    highscorePanel.SetActive(false);
+    loosePanel.SetActive(false);
+    highscoreText.gameObject.SetActive(false);
   }
   private void OnEnable()
   {
@@ -33,17 +40,24 @@ public class UI_Panel : MonoBehaviour
     Stop?.Invoke();
     SaveScore?.Invoke();
     EndGame();
+    LooseGameNWatch = true;
   }
   
   public void EndGame()
   {
+    if (playerDatas.IsBestScore(gameName, scoreDatas.ScoreValue))
+    {
+      highscoreText.gameObject.SetActive(true);
+      Debug.Log("BEST");
+    }
     if (playerDatas.IsHighscore(gameName, scoreDatas.ScoreValue))
     {
       playerDatas.AddHighscore(gameName, playerDatas.Name, scoreDatas.ScoreValue);
+      scoreText.text = $"Score: {scoreDatas.ScoreValue}";
     }
-    if (highscorePanel != null)
-    {
-      highscorePanel.SetActive(true);
-    }
+    //if (highscorePanel != null)
+    //{
+      //highscorePanel.SetActive(true);
+    //}
   }
 }

@@ -10,6 +10,7 @@ public class PlayerCollect : MonoBehaviour
 
 // Events
   public static Action<int> OntargetCollected;
+  // plus utile car seule les points sont affichés
   public static Action <int> OnLevelUp;
   public event Action LevelUpDifficulty;
 
