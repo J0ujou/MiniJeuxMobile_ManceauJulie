@@ -3,8 +3,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
    [SerializeField] private Transform[] m_transforms;
-   [SerializeField] private InputPlayerManagerCustom m_inputManager; // lien component/event dispatcher
+   [SerializeField] private InputPlayerManagerCustom m_inputManager;
+   // lien component/event dispatcher
 
+   [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+   [SerializeField] private AudioType _playerMovement;
+   
    private int m_currentIndex = 2;
    private int m_moveSpeed = 1;
 
@@ -25,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
       m_currentIndex += m_moveSpeed;
       m_currentIndex = Mathf.Clamp(m_currentIndex, 0, m_transforms.Length - 1);
       UpdatePosition();
+      _audioEventDispatcher.Playaudio(_playerMovement);
    }
 
    public void MoveToPreviousPosition()
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
       m_currentIndex -= m_moveSpeed;
       m_currentIndex = Mathf.Clamp(m_currentIndex, 0, m_transforms.Length - 1);
       UpdatePosition();
+      _audioEventDispatcher.Playaudio(_playerMovement);
    }
 
    public void MoveToDirection(int direction) // direction = -1 OU 1

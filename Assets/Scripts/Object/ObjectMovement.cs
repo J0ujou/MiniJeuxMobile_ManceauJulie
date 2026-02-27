@@ -22,7 +22,7 @@ public class ObjectMovement : MonoBehaviour
         if (_objectfalling == null)
         {
             _objectfalling = NewObject;
-            _index = -1;
+            _index = 0;
             MoveObject();
             //_objectfalling.transform.position = _transforms[-1].position;
             _audioEventDispatcher.Playaudio(_objectmovement);
@@ -55,7 +55,7 @@ public class ObjectMovement : MonoBehaviour
         {
             Destroy(_objectfalling);
             _audioEventDispatcher.Playaudio(_destruction);
-            _index = -1;
+            _index = 0;
             Loose?.Invoke();
         }
     }

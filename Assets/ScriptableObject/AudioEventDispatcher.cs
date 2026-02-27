@@ -9,7 +9,12 @@ public enum AudioType
     PlayerMovement,
     Destruction,
     Death,
-    Win
+    NewReccord,
+    Pickup,
+    Levelup,
+    Button,
+    Locked,
+    Menu,
 }
 
 [Serializable]

@@ -14,6 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioEventDispatcher
   audioInfos:
   - audioType: 1
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 977349246e69d484e82d5f2c15e5bc1f, type: 3}
   - audioType: 2
+    audioClip: {fileID: 8300000, guid: 464d6fb63186d954eac4bae72771ea37, type: 3}
+  - audioType: 3
+    audioClip: {fileID: 8300000, guid: 679dc0b3c8861564d9253550b018b84d, type: 3}
+  - audioType: 4
+    audioClip: {fileID: 8300000, guid: a65f80829cadb0748b0dda11f8db2331, type: 3}
+  - audioType: 5
+    audioClip: {fileID: 8300000, guid: 9b7f3a044c4387946935f20fa036343f, type: 3}
+  - audioType: 6
+    audioClip: {fileID: 8300000, guid: 06b5b0e9188471b418ef141e4cdb124c, type: 3}
+  - audioType: 7
+    audioClip: {fileID: 8300000, guid: aa0fd955d33df8e4c88949c539c5d229, type: 3}
+  - audioType: 8
+    audioClip: {fileID: 8300000, guid: 6875161c22c3548448551061f6b0a261, type: 3}
+  - audioType: 9
+    audioClip: {fileID: 8300000, guid: 68ed065ecb09ab84f9551f43bba443ff, type: 3}
+  - audioType: 10
     audioClip: {fileID: 0}

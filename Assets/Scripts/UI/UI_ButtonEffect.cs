@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 public class UI_ButtonEffect : MonoBehaviour
 {
     [SerializeField] private GameObject HighScorePanel;
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _button;
+    [SerializeField] private AudioType _lock;
 
     public void ActiveHighScorePanel()
     {
@@ -28,5 +31,15 @@ public class UI_ButtonEffect : MonoBehaviour
     public void OpenMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void LockButton()
+    {
+        _audioEventDispatcher.Playaudio(_lock);
+    }
+
+    public void ButtonSound()
+    {
+        _audioEventDispatcher.Playaudio(_button);
     }
 }
