@@ -13,7 +13,6 @@ public class UI_Panel : MonoBehaviour
   public GameObject levelUpPanel;
   [SerializeField] private TMP_Text highscoreText;
   [SerializeField] private TMP_Text scoreText;
-  [SerializeField] private PlayerCollect playerCollect;
   public bool LooseGameNWatch = false;
 
   public event Action Stop;
@@ -30,13 +29,13 @@ public class UI_Panel : MonoBehaviour
   private void OnEnable()
   {
     ObjectMovement.Loose += ShowLoosePanel;
-    playerCollect.OnLevelUp += ShowLevelUp;
+    PlayerCollect.OnLevelUp += ShowLevelUp;
   }
 
   private void OnDisable()
   {
     ObjectMovement.Loose -= ShowLoosePanel;
-    playerCollect.OnLevelUp -= ShowLevelUp;
+    PlayerCollect.OnLevelUp -= ShowLevelUp;
   }
 
 

@@ -6,6 +6,7 @@ public class TimeManager : MonoBehaviour
 {
   [SerializeField] private float _timeStepDuration = 1.0f;
   [SerializeField] PlayerCollect playerCollect;
+  [SerializeField] ScoreDatas scoreDatas;
   [SerializeField] Spawner spawner;
   [SerializeField] UI_Panel uiPanel;
 
@@ -40,8 +41,11 @@ public class TimeManager : MonoBehaviour
 
   public void FallSpeed()
   {
-    //_timeStepDuration -= 0.2f;
     spawner.ReduceSpawnDelay();
+    if (scoreDatas.ScoreValue > 30)
+    {
+      _timeStepDuration= Mathf.Clamp(_timeStepDuration - 0.1f, 0.5f, 1f);
+    }
   }
   public void StartTime()
   {

@@ -10,7 +10,7 @@ public class PlayerCollect : MonoBehaviour
 
 // Events
   public static Action<int> OntargetCollected;
-  public event Action OnLevelUp;
+  public static event Action OnLevelUp;
   public event Action LevelUpDifficulty;
 
   public void UpdateScore(int value)
