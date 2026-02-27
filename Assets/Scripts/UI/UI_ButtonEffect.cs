@@ -7,6 +7,8 @@ public class UI_ButtonEffect : MonoBehaviour
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
     [SerializeField] private AudioType _button;
     [SerializeField] private AudioType _lock;
+    [SerializeField] private Animator _Lock1animator;
+    [SerializeField] private Animator _Lock2animator;
 
     public void ActiveHighScorePanel()
     {
@@ -21,7 +23,9 @@ public class UI_ButtonEffect : MonoBehaviour
     public void Replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
+    
 
     public void OpenGameNWatch()
     {
@@ -41,5 +45,15 @@ public class UI_ButtonEffect : MonoBehaviour
     public void ButtonSound()
     {
         _audioEventDispatcher.Playaudio(_button);
+    }
+
+    public void Lock1()
+    {
+        _Lock1animator.SetTrigger("ButtonPressed");
+    }
+
+    public void Lock2()
+    {
+        _Lock2animator.SetTrigger("Button2Pressed");
     }
 }

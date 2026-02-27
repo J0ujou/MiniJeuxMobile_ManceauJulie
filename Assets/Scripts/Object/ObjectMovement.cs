@@ -10,6 +10,8 @@ public class ObjectMovement : MonoBehaviour
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
     [SerializeField] private AudioType _objectmovement;
     [SerializeField] private AudioType _destruction;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _destructionClip;
     
     
     public static event Action Loose;
@@ -54,9 +56,9 @@ public class ObjectMovement : MonoBehaviour
         else
         {
             Destroy(_objectfalling);
-            _audioEventDispatcher.Playaudio(_destruction);
             _index = 0;
             Loose?.Invoke();
+            _audioSource.PlayOneShot(_destructionClip);
         }
     }
 }

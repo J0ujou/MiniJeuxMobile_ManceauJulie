@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
    [SerializeField] private AudioType _playerMovement;
+   [SerializeField] private Sprite[] _charaSprite;
+   private SpriteRenderer spriterenderer;
    
    private int m_currentIndex = 2;
    private int m_moveSpeed = 1;
@@ -16,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
    {
       m_inputManager.OnMoveLeft += MoveToPreviousPosition; // bind à event dispatcher left
       m_inputManager.OnMoveRight += MoveToNextPosition; // bind à event dispatcher right
+   }
+
+   private void Awake()
+   {
+      spriterenderer = GetComponent<SpriteRenderer>();
    }
 
    private void Start()
@@ -30,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
       m_currentIndex = Mathf.Clamp(m_currentIndex, 0, m_transforms.Length - 1);
       UpdatePosition();
       _audioEventDispatcher.Playaudio(_playerMovement);
+      CheckPosition();
    }
 
    public void MoveToPreviousPosition()
@@ -38,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
       m_currentIndex = Mathf.Clamp(m_currentIndex, 0, m_transforms.Length - 1);
       UpdatePosition();
       _audioEventDispatcher.Playaudio(_playerMovement);
+      CheckPosition();
    }
 
    public void MoveToDirection(int direction) // direction = -1 OU 1
@@ -50,5 +59,10 @@ public class PlayerMovement : MonoBehaviour
    public void UpdatePosition()
    {
       transform.position = m_transforms[m_currentIndex].position;
+   }
+
+   private void CheckPosition()
+   {
+      spriterenderer.sprite = _charaSprite[m_currentIndex];
    }
 }

@@ -17,6 +17,13 @@ public class UI_Panel : MonoBehaviour
   [SerializeField] private AudioType _death;
   [SerializeField] private AudioType _newReccord;
   public bool LooseGameNWatch = false;
+  [SerializeField] private AudioSource _audioSource;
+  [SerializeField] private AudioClip _newReccordClip;
+  
+  [SerializeField] public Animator uiCandyRainAnimator;
+  [SerializeField] public Animator uiCandyRainGameOverAnimator;
+  [SerializeField] public Animator uiCandyRainLevelUpAnimator;
+  [SerializeField] public Animator uiCandyRainFireworkAnimator;
 
   public event Action Stop;
   public event Action SaveScore;
@@ -28,6 +35,7 @@ public class UI_Panel : MonoBehaviour
     loosePanel.SetActive(false);
     highscoreText.gameObject.SetActive(false);
     timeManager.StopTime();
+    uiCandyRainAnimator.SetTrigger("Spawned");
   }
   private void OnEnable()
   {
@@ -40,11 +48,11 @@ public class UI_Panel : MonoBehaviour
     ObjectMovement.Loose -= ShowLoosePanel;
     PlayerCollect.OnLevelUp -= ShowLevelUp;
   }
-
-
+  
   public void ShowLevelUp()
   {
-    levelUpPanel.SetActive(true);
+    uiCandyRainFireworkAnimator.SetTrigger("LevelUp");
+    uiCandyRainLevelUpAnimator.SetTrigger("LevelUp");
   }
   public void ShowLoosePanel()
   {
@@ -54,6 +62,7 @@ public class UI_Panel : MonoBehaviour
     EndGame();
     LooseGameNWatch = true;
     _audioEventDispatcher.Playaudio(_death);
+    uiCandyRainGameOverAnimator.SetTrigger("Loose");
   }
   
   public void EndGame()
@@ -61,8 +70,8 @@ public class UI_Panel : MonoBehaviour
     if (playerDatas.IsBestScore(gameName, scoreDatas.ScoreValue))
     {
       highscoreText.gameObject.SetActive(true);
-      _audioEventDispatcher.Playaudio(_newReccord);
       Debug.Log("BEST");
+      _audioSource.PlayOneShot(_newReccordClip);
     }
     if (playerDatas.IsHighscore(gameName, scoreDatas.ScoreValue))
     {
@@ -73,5 +82,10 @@ public class UI_Panel : MonoBehaviour
     //{
       //highscorePanel.SetActive(true);
     //}
+  }
+
+  public void PlayPressed()
+  {
+    uiCandyRainAnimator.SetTrigger("PlayPressed");
   }
 }
