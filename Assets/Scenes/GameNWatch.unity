@@ -10489,7 +10489,6 @@ MonoBehaviour:
   levelUpPanel: {fileID: 2514397645824203986, guid: f02562f1c8e5f4741ae92154aac27b02, type: 3}
   highscoreText: {fileID: 1125582264}
   scoreText: {fileID: 1138784309}
-  playerCollect: {fileID: 32805331}
   LooseGameNWatch: 0
 --- !u!114 &1863979999
 MonoBehaviour:
@@ -11324,7 +11323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2010426701}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1863980004}
+        m_TargetAssemblyTypeName: UI_ButtonEffect, Assembly-CSharp
+        m_MethodName: OpenMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2010426701
 MonoBehaviour:
   m_ObjectHideFlags: 0

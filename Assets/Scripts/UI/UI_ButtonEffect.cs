@@ -24,4 +24,9 @@ public class UI_ButtonEffect : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void OpenMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

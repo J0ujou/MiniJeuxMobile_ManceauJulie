@@ -15,11 +15,18 @@ public class ObjectMovement : MonoBehaviour
     public static event Action Loose;
     public void Init(GameObject NewObject)
     {
+        if (_objectfalling != null)
+        {
+            Destroy(NewObject);
+        }
         if (_objectfalling == null)
         {
             _objectfalling = NewObject;
+            //_index = -1;
+            //MoveObject();
             _index = -1;
-            MoveObject();
+            _objectfalling.transform.position = _transforms[-1].position;
+            _audioEventDispatcher.Playaudio(_objectmovement);
         }
     }
 
