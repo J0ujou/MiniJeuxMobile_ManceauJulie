@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4760109913005433591}
   - component: {fileID: 5629721294994449747}
   - component: {fileID: 890155546855701030}
+  - component: {fileID: 1250706736387372631}
   m_Layer: 5
   m_Name: HighScores
   m_TagString: Untagged
@@ -103,6 +104,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &1250706736387372631
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458795558654578904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 840b5ace9c7cb8f429ee28d1afbe8d05, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &912510550773889847
 GameObject:
   m_ObjectHideFlags: 0
