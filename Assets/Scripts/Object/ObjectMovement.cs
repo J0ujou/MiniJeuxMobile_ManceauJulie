@@ -22,10 +22,9 @@ public class ObjectMovement : MonoBehaviour
         if (_objectfalling == null)
         {
             _objectfalling = NewObject;
-            //_index = -1;
-            //MoveObject();
             _index = -1;
-            _objectfalling.transform.position = _transforms[-1].position;
+            MoveObject();
+            //_objectfalling.transform.position = _transforms[-1].position;
             _audioEventDispatcher.Playaudio(_objectmovement);
         }
     }
