@@ -10,7 +10,7 @@ public class UI_Panel : MonoBehaviour
   [SerializeField] private GameObject highscorePanel;
   [SerializeField] private ScoreDatas scoreDatas;
   public GameObject loosePanel;
-  public GameObject levelUpPanel;
+  public bool play=false;
   [SerializeField] private TMP_Text highscoreText;
   [SerializeField] private TMP_Text scoreText;
   [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
@@ -30,6 +30,7 @@ public class UI_Panel : MonoBehaviour
   
   private void Start()
   {
+    play = false;
     playerDatas.LoadDatas();
     highscorePanel.SetActive(false);
     loosePanel.SetActive(false);
@@ -90,5 +91,6 @@ public class UI_Panel : MonoBehaviour
   public void PlayPressed()
   {
     uiCandyRainAnimator.SetTrigger("PlayPressed");
+    play = true;
   }
 }

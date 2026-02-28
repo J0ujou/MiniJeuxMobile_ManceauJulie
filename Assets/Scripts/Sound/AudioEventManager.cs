@@ -23,6 +23,6 @@ public class AudioEventManager : MonoBehaviour
     {
         _audioSource.Stop();
         _audioSource.clip = clip;
-        _audioSource.Play();
+        _audioSource.PlayOneShot(clip);
     }
 }

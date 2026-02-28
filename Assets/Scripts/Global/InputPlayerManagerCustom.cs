@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 using UnityEngine.InputSystem;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
@@ -50,7 +51,7 @@ public class InputPlayerManagerCustom : MonoBehaviour
       return;
     }
 
-    if (uiPanel.LooseGameNWatch)
+    if (uiPanel.LooseGameNWatch) //|| uiPanel.play == false)
     {
       return;
     }
