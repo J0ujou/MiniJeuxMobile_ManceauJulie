@@ -56,12 +56,15 @@ public class UI_Panel : MonoBehaviour
   }
   public void ShowLoosePanel()
   {
+    _audioSource.Stop();
+    _audioSource.loop = false;
+    _audioSource.volume = 1f;
+    _audioEventDispatcher.Playaudio(_death);
     loosePanel.SetActive(true);
     Stop?.Invoke();
     SaveScore?.Invoke();
     EndGame();
     LooseGameNWatch = true;
-    _audioEventDispatcher.Playaudio(_death);
     uiCandyRainGameOverAnimator.SetTrigger("Loose");
   }
   

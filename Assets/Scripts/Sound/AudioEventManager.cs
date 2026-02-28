@@ -5,6 +5,10 @@ public class AudioEventManager : MonoBehaviour
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
     [SerializeField] private AudioSource _audioSource;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void OnEnable()
     {
         _audioEventDispatcher.OnAudioEvent += PlayAudioFX;

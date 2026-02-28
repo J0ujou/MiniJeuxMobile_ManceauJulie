@@ -1,10 +1,12 @@
 using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UI_ButtonEffect : MonoBehaviour
 {
     [SerializeField] private GameObject HighScorePanel;
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioType _button;
     [SerializeField] private AudioType _lock;
     [SerializeField] private Animator _Lock1animator;
@@ -29,6 +31,7 @@ public class UI_ButtonEffect : MonoBehaviour
 
     public void OpenGameNWatch()
     {
+        _audioSource.Stop();
         SceneManager.LoadScene(1);
     }
 
