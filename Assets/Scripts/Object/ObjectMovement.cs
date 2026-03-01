@@ -24,10 +24,10 @@ public class ObjectMovement : MonoBehaviour
         if (_objectfalling == null)
         {
             _objectfalling = NewObject;
-            _index = 0;
+            _index = -1;
             MoveObject();
             //_objectfalling.transform.position = _transforms[-1].position;
-            _audioEventDispatcher.Playaudio(_objectmovement);
+            //_audioEventDispatcher.Playaudio(_objectmovement);
         }
     }
 
@@ -48,17 +48,18 @@ public class ObjectMovement : MonoBehaviour
             return;
         }
         _index++;
-        if (_index < _transforms.Length)
+        if (_index == _transforms.Length - 1)
+        {
+            Destroy(_objectfalling);
+            _index = -1;
+            Loose?.Invoke();
+            _audioSource.PlayOneShot(_destructionClip);
+        }
+        else
         {
             _objectfalling.transform.position = _transforms[_index].position;
             _audioEventDispatcher.Playaudio(_objectmovement);
         }
-        else
-        {
-            Destroy(_objectfalling);
-            _index = 0;
-            Loose?.Invoke();
-            _audioSource.PlayOneShot(_destructionClip);
-        }
+
     }
 }

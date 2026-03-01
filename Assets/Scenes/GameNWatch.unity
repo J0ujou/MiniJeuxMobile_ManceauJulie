@@ -317,7 +317,7 @@ Transform:
   m_GameObject: {fileID: 21683898}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.01, y: -6.13, z: 0}
+  m_LocalPosition: {x: -11.18, y: -5.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1772,7 +1772,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2399,7 +2399,7 @@ Transform:
   m_GameObject: {fileID: 507910980}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6499996, y: -5.26, z: 0}
+  m_LocalPosition: {x: 2.18, y: -5.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2452,7 +2452,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2005500469
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 53ddc2e2595140d449aa85be096cdc01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2665,7 +2665,7 @@ Transform:
   m_GameObject: {fileID: 545035740}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.24, y: -4.4, z: 0}
+  m_LocalPosition: {x: -16.64, y: -4.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3864,7 +3864,7 @@ Transform:
   m_GameObject: {fileID: 809126299}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.37, y: -5.67, z: 0}
+  m_LocalPosition: {x: -13.78, y: -5.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3917,7 +3917,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2005500469
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: a0dd9de06276e084481852fc9daa5689, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3955,7 +3955,7 @@ Transform:
   m_GameObject: {fileID: 814495113}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.96, y: -5.92, z: 0}
+  m_LocalPosition: {x: -10.59, y: -5.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4008,7 +4008,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2005500469
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 6a1ee443812c58e468e6c253d7e78877, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6285,7 +6285,7 @@ Transform:
   m_GameObject: {fileID: 955184638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.07, y: -5.26, z: 0}
+  m_LocalPosition: {x: -12.39, y: -5.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6467,7 +6467,7 @@ Transform:
   m_GameObject: {fileID: 1014226682}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3999996, y: -6.35, z: 0}
+  m_LocalPosition: {x: 1.3999996, y: -6.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6972,7 +6972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1125582263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7021,7 +7021,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293950968
+    rgba: 15760888
   m_fontColor: {r: 0.9716981, g: 0.49043253, b: 0.9422329, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7126,8 +7126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 305, y: -172}
-  m_SizeDelta: {x: 180, y: 200}
+  m_AnchoredPosition: {x: 305, y: -186}
+  m_SizeDelta: {x: 160, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131207553
 MonoBehaviour:
@@ -7445,7 +7445,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2005500469
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300010, guid: f6a737996a4a842e58ba28428e71d711, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7700,9 +7700,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ne ratez pas un bonbon!
+  m_text: 'Ne ratez pas un bonbon! Ils seront utiles pour la construction.
 
-    Mais attention, ils sont fragiles!'
+    Mais
+    attention, ils sont fragiles!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f6a738cfa8347f47bb4be5d30e15cb0, type: 2}
   m_sharedMaterial: {fileID: 7076223392815398957, guid: 7f6a738cfa8347f47bb4be5d30e15cb0, type: 2}
@@ -7729,8 +7730,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7768,7 +7769,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -456.136, w: 0}
+  m_margin: {x: 94.145996, y: 0, z: -331.94348, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8202,7 +8203,7 @@ Transform:
   m_GameObject: {fileID: 1307351833}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.81, y: -6.34, z: 0}
+  m_LocalPosition: {x: -15.56, y: -6.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8255,7 +8256,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2005500469
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300044, guid: f6a737996a4a842e58ba28428e71d711, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8529,8 +8530,8 @@ Transform:
   - {fileID: 804809197}
   - {fileID: 21683899}
   - {fileID: 1172070825}
-  - {fileID: 809126300}
   - {fileID: 1996420855}
+  - {fileID: 809126300}
   - {fileID: 955184639}
   - {fileID: 507910981}
   - {fileID: 545035741}
@@ -10251,6 +10252,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1863979998}
+        m_TargetAssemblyTypeName: UI_Panel, Assembly-CSharp
+        m_MethodName: PlayPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1721044558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10459,7 +10472,7 @@ Transform:
   m_GameObject: {fileID: 1796960813}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.31, y: -6.66, z: 0}
+  m_LocalPosition: {x: -14.9, y: -6.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10512,7 +10525,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2005500469
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300036, guid: f6a737996a4a842e58ba28428e71d711, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10875,7 +10888,7 @@ MonoBehaviour:
   highscorePanel: {fileID: 625189422}
   scoreDatas: {fileID: 11400000, guid: 0c384c72442791947a00a005f8e77df9, type: 2}
   loosePanel: {fileID: 305783794}
-  levelUpPanel: {fileID: 2514397645824203986, guid: f02562f1c8e5f4741ae92154aac27b02, type: 3}
+  play: 0
   highscoreText: {fileID: 1125582264}
   scoreText: {fileID: 1138784309}
   _audioEventDispatcher: {fileID: 11400000, guid: ae8d4a8d2ac4c48418146a2c3629decb, type: 2}

@@ -46,12 +46,12 @@ public class InputPlayerManagerCustom : MonoBehaviour
 
   private void Update()
   {
-    if (Touch.activeTouches.Count <= 0)
+    if (Touch.activeTouches.Count <= 0 ) //|| !uiPanel.play)
     {
       return;
     }
 
-    if (uiPanel.LooseGameNWatch) //|| uiPanel.play == false)
+    if (uiPanel.LooseGameNWatch)
     {
       return;
     }
@@ -73,7 +73,6 @@ public class InputPlayerManagerCustom : MonoBehaviour
       {
         endPosition = touch.screenPosition;
         OnSwipe();
-        swipedetected = true;
         _isTouching = false;
       }
     }

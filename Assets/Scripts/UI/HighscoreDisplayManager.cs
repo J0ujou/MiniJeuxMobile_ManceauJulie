@@ -3,27 +3,22 @@ using UnityEngine;
 
 public class HighscoreDisplayManager : MonoBehaviour
 {
-    [Header("Configuration")]
+
     [SerializeField] private string gameName = "RunNJump";
     [SerializeField] private SO_PlayerDatas playerDatas;
     
-    [Header("UI References")]
     [SerializeField] private Transform entriesContainer;
     [SerializeField] private GameObject entryPrefab;
     [SerializeField] private int maxEntriesToShow = 10;
 
     private List<HighScoreEntryUI> entryUIList = new List<HighScoreEntryUI>();
-
-    private void Start()
+    
+    private void OnEnable()
     {
         if (playerDatas != null)
         {
             playerDatas.LoadDatas();
         }
-    }
-
-    private void OnEnable()
-    {
         DisplayHighscores();
     }
 

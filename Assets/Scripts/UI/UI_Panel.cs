@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class UI_Panel : MonoBehaviour
 {
@@ -13,10 +14,13 @@ public class UI_Panel : MonoBehaviour
   public bool play=false;
   [SerializeField] private TMP_Text highscoreText;
   [SerializeField] private TMP_Text scoreText;
+  
   [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
   [SerializeField] private AudioType _death;
-  [SerializeField] private AudioType _newReccord;
+  
   public bool LooseGameNWatch = false;
+  public static bool AlreadyPlayed = false;
+  
   [SerializeField] private AudioSource _audioSource;
   [SerializeField] private AudioClip _newReccordClip;
   
@@ -30,13 +34,21 @@ public class UI_Panel : MonoBehaviour
   
   private void Start()
   {
+    if (AlreadyPlayed)
+    {
+      return;
+    }
+    else
+    {
+      uiCandyRainAnimator.SetTrigger("Spawned");
+      timeManager.StopTime();
+    }
     play = false;
     playerDatas.LoadDatas();
     highscorePanel.SetActive(false);
     loosePanel.SetActive(false);
     highscoreText.gameObject.SetActive(false);
-    timeManager.StopTime();
-    uiCandyRainAnimator.SetTrigger("Spawned");
+    
   }
   private void OnEnable()
   {
@@ -74,7 +86,6 @@ public class UI_Panel : MonoBehaviour
     if (playerDatas.IsBestScore(gameName, scoreDatas.ScoreValue))
     {
       highscoreText.gameObject.SetActive(true);
-      Debug.Log("BEST");
       _audioSource.PlayOneShot(_newReccordClip);
     }
     if (playerDatas.IsHighscore(gameName, scoreDatas.ScoreValue))
@@ -82,15 +93,19 @@ public class UI_Panel : MonoBehaviour
       playerDatas.AddHighscore(gameName, playerDatas.Name, scoreDatas.ScoreValue);
     }
     scoreText.text = $"Score: {scoreDatas.ScoreValue}";
-    //if (highscorePanel != null)
-    //{
-      //highscorePanel.SetActive(true);
-    //}
   }
 
   public void PlayPressed()
   {
-    uiCandyRainAnimator.SetTrigger("PlayPressed");
     play = true;
+    if (AlreadyPlayed)
+    {
+      return;
+    }
+    else
+    {
+      uiCandyRainAnimator.SetTrigger("PlayPressed");
+      AlreadyPlayed=true;
+    }
   }
 }

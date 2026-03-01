@@ -17,6 +17,7 @@ public class SO_PlayerDatas : ScriptableObject
     
     private SaveController saveSystem;
     private const int nbMaxHighscore = 10;
+    private bool isloaded = false;
 
     public void LoadDatas()
     {
@@ -31,6 +32,7 @@ public class SO_PlayerDatas : ScriptableObject
         highscoresRNJ = datas.highscoresRNJ;
         highscoresGNW = datas.highscoresGNW;
         highscoresSG = datas.highscoresSG;
+        isloaded = true;
     }
     
 
@@ -55,6 +57,10 @@ public class SO_PlayerDatas : ScriptableObject
     /// </summary>
     public void AddHighscore(string gameName, string playerName, int scoreValue)
     {
+        if (!isloaded)
+        {
+            LoadDatas();
+        }
         // Créer une nouvelle entrée
         HighscoreEntry newEntry = new HighscoreEntry(playerName, scoreValue);
         
@@ -101,9 +107,15 @@ public class SO_PlayerDatas : ScriptableObject
     {
         List<HighscoreEntry> targetList = GetHighscoreList(gameName);
         // rien faire si c'est le premier score inscrit
-        if (targetList == null || targetList.Count == 0) return true;
+        if (targetList == null || targetList.Count == 0)
+        {
+            return true;
+        }
         // vérifier si le score est meilleur que le premier
-        return scoreValue > targetList[0].Score;
+        else
+        {
+            return scoreValue > targetList[0].Score;
+        }
     }
     
     /// Récupère la liste des highscores pour un jeu donné
@@ -145,9 +157,10 @@ public class SO_PlayerDatas : ScriptableObject
         // vérifier si savesystem contient un objet du type savesystem (qlqchose dedans??)
         if (saveSystem == null)
         {
-            // si rien , j'en instancie un (créer)
+            // si rien, j'en instancie un (créer)
             saveSystem = new SaveController();
         }
 
     }
+    
 }

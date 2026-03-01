@@ -272,7 +272,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -281,7 +281,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -290,13 +290,40 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3313373
+      value: 0.35289204
+      inSlope: 3.481158
+      outSlope: 3.481158
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.25371313
+    - serializedVersion: 3
+      time: 0.48616996
+      value: 1.0012656
+      inSlope: 0.08397641
+      outSlope: 0.08397641
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.67222714
+      value: 0.28656125
+      inSlope: -3.0540528
+      outSlope: -3.0540528
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.03592316
+      outWeight: 0.10604141
     - serializedVersion: 3
       time: 1
       value: 0
@@ -796,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 500, y: 130}
+  m_AnchoredPosition: {x: 500, y: 50}
   m_SizeDelta: {x: 180, y: 230}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &446289432
@@ -1067,7 +1094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 130}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 180, y: 230}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &650814874
@@ -2874,6 +2901,7 @@ GameObject:
   - component: {fileID: 1665213415}
   - component: {fileID: 1665213417}
   - component: {fileID: 1665213416}
+  - component: {fileID: 1665213418}
   m_Layer: 5
   m_Name: MAIN
   m_TagString: Untagged
@@ -2947,6 +2975,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665213414}
   m_CullTransparentMesh: 1
+--- !u!114 &1665213418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665213414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b79691050d0cd64a844c41260224caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1665712429
 GameObject:
   m_ObjectHideFlags: 0
