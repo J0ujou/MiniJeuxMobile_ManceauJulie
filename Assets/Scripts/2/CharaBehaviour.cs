@@ -21,6 +21,18 @@ public class CharaBehaviour : MonoBehaviour
         CharaRigidbody= GetComponent<Rigidbody2D>();
     }
 
+    private void OnEnable()
+    {
+        GellyEffect.DoGellyJump += GellyJump;
+        PlayerInput.jump += Jumping;
+    }
+
+    private void OnDisable()
+    {
+        GellyEffect.DoGellyJump -= GellyJump;
+        PlayerInput.jump -= Jumping;
+    }
+
     private void FixedUpdate()
     {
         RaycastHit2D playerRaycast = Physics2D.Raycast(transform.position, Vector2.down, _rayLength, _groundLayer);
@@ -49,6 +61,24 @@ public class CharaBehaviour : MonoBehaviour
         if (callbackContext.started && IsGrounded && IsAlive)
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, _jumpHeight);
+        }
+    }
+    
+    public void Jumping()
+    {
+        charaAnimator.SetBool("IsJumping", true);
+        if (IsGrounded && IsAlive)
+        {
+            CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, _jumpHeight);
+        }
+    }
+
+    public void GellyJump()
+    {
+        charaAnimator.SetBool("IsJumping", true);
+        if (IsAlive)
+        {
+            CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, 12f);
         }
     }
 }

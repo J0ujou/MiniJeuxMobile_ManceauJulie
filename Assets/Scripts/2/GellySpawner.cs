@@ -1,0 +1,36 @@
+using UnityEngine;
+
+public class GellySpawner : MonoBehaviour
+{
+    [SerializeField] private Sprite[] GellySprites;
+    [SerializeField] private GameObject GellyPrefab;
+    [SerializeField] private float _maxSpawnInterval = 4f;
+    private float timer =0f;
+    private SpriteRenderer spriteR;
+
+    private void Start()
+    {
+        spriteR = GellyPrefab.GetComponent<SpriteRenderer>();
+    }
+    
+    private void RandomColorgelly()
+    {
+         spriteR.sprite = GellySprites[Random.Range(0, GellySprites.Length)];
+    }
+    
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= _maxSpawnInterval)
+        {
+            SpawnGelly();
+            timer = 0f;
+            _maxSpawnInterval= Random.Range(1, _maxSpawnInterval);
+        }
+    }
+    private void SpawnGelly()
+    {
+        RandomColorgelly();
+        Instantiate(GellyPrefab, transform.position, Quaternion.identity);
+    }
+}
