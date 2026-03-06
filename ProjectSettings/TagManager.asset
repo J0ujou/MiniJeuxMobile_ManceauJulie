@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Barrier
   - Sweet
+  - Collectible
   layers:
   - Default
   - TransparentFX

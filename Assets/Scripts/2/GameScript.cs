@@ -8,6 +8,10 @@ public class GameScript : MonoBehaviour
    [SerializeField] private SO_PlayerDatas playerDatas;
    [SerializeField] private string gameName = "RunNJump";
    [SerializeField] private GameObject highscorePanel;
+   [SerializeField] private TMP_Text highscoreText;
+   [SerializeField] private TMP_Text scoreText;
+   [SerializeField] private GameObject loosePanel;
+   [SerializeField] public Animator uiCandyRainGameOverAnimator;
 
     private int playerScore = 0;
     private float scoreTimer = 0f;
@@ -38,13 +42,19 @@ public class GameScript : MonoBehaviour
 
     public void EndGame()
     {
-        if (playerDatas.IsHighscore(gameName, playerScore))
-        {
-            playerDatas.AddHighscore(gameName, playerDatas.Name, playerScore);
-        }
-        if (highscorePanel != null)
-        {
-            highscorePanel.SetActive(true);
-        }
+        //_audioEventDispatcher.Playaudio(_death);
+        loosePanel.SetActive(true);
+        //SaveScore?.Invoke();
+        uiCandyRainGameOverAnimator.SetTrigger("Loose");
+            if (playerDatas.IsBestScore(gameName, playerScore))
+            {
+                highscoreText.gameObject.SetActive(true);
+                //_audioSource.PlayOneShot(_newReccordClip);
+            }
+            if (playerDatas.IsHighscore(gameName, playerScore))
+            {
+                playerDatas.AddHighscore(gameName, playerDatas.Name, playerScore);
+            }
+            scoreText.text = $"Score: {playerScore.ToString()}";
     }
 }

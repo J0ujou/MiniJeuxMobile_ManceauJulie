@@ -17,13 +17,17 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] private GameScript gameScript;
     [SerializeField] private Shield shield;
     [SerializeField] TMP_Text _collectibleText;
+    private int NbCollectible = 0;
+    [SerializeField] private int NbForShield = 3;
 
+    public static event Action Shieldcreation;
     public static event Action OnShieldDestroy;
-    public static event Action<int> numberCollected;
+    
     private void Start()
     {
         Time.timeScale = 1.0f;
         IsAlive = true;
+        NbCollectible = 0;
         
         CharaRigidbody= GetComponent<Rigidbody2D>();
     }
@@ -58,6 +62,7 @@ public class CharaBehaviour : MonoBehaviour
             if (shield.shielded)
             {
                 OnShieldDestroy?.Invoke();
+                Destroy(collision.gameObject);
             }
             else
             {
@@ -67,6 +72,21 @@ public class CharaBehaviour : MonoBehaviour
                 gameScript.EndGame();
             }
 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Collectible"))
+        {
+            Debug.Log(NbCollectible);
+            NbCollectible++;
+            if (NbCollectible >= NbForShield)
+            {
+                Debug.Log("enfin");
+                NbCollectible = 0;
+                Shieldcreation?.Invoke();
+            }
         }
     }
 

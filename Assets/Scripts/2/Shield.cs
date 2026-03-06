@@ -8,13 +8,13 @@ public class Shield : MonoBehaviour
 
     private void OnEnable()
     {
-        ShieldCollectibles.Shieldcreation += ShieldCreation;
+        CharaBehaviour.Shieldcreation += ShieldCreation;
         CharaBehaviour.OnShieldDestroy += ShieldDestroy;
     }
 
     private void OnDisable()
     {
-        ShieldCollectibles .Shieldcreation -= ShieldCreation;
+        CharaBehaviour .Shieldcreation -= ShieldCreation;
         CharaBehaviour.OnShieldDestroy -= ShieldDestroy;
     }
 

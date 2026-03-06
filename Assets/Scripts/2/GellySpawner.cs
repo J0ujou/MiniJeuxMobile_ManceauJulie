@@ -27,7 +27,7 @@ public class GellySpawner : MonoBehaviour
         {
             SpawnGelly();
             timer = 0f;
-            spawnInterval= Random.Range(1, _maxSpawnInterval);
+            spawnInterval= Random.Range(_minSpawnInterval, _maxSpawnInterval);
         }
     }
     private void SpawnGelly()
