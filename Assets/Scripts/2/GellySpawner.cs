@@ -5,6 +5,8 @@ public class GellySpawner : MonoBehaviour
     [SerializeField] private Sprite[] GellySprites;
     [SerializeField] private GameObject GellyPrefab;
     [SerializeField] private float _maxSpawnInterval = 4f;
+    [SerializeField] private float _minSpawnInterval = 4f;
+    private float spawnInterval = 10;
     private float timer =0f;
     private SpriteRenderer spriteR;
 
@@ -21,11 +23,11 @@ public class GellySpawner : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= _maxSpawnInterval)
+        if (timer >= spawnInterval)
         {
             SpawnGelly();
             timer = 0f;
-            _maxSpawnInterval= Random.Range(1, _maxSpawnInterval);
+            spawnInterval= Random.Range(1, _maxSpawnInterval);
         }
     }
     private void SpawnGelly()

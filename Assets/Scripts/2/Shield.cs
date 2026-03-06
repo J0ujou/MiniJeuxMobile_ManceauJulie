@@ -1,7 +1,38 @@
+using System;
 using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    private int NbCollectible = 0;
     public bool shielded = false;
+    [SerializeField] SpriteRenderer spriteRenderer;
+
+    private void OnEnable()
+    {
+        ShieldCollectibles.Shieldcreation += ShieldCreation;
+        CharaBehaviour.OnShieldDestroy += ShieldDestroy;
+    }
+
+    private void OnDisable()
+    {
+        ShieldCollectibles .Shieldcreation -= ShieldCreation;
+        CharaBehaviour.OnShieldDestroy -= ShieldDestroy;
+    }
+
+    private void Start()
+    {
+        spriteRenderer.enabled = false;
+        shielded = false;
+    }
+
+    public void ShieldCreation()
+    {
+        spriteRenderer.enabled = true;
+        shielded = true;
+    }
+
+    public void ShieldDestroy()
+    {
+        spriteRenderer.enabled = false;
+        shielded = false;
+    }
 }

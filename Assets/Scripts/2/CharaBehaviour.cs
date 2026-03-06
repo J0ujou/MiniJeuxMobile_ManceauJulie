@@ -1,5 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
+using TMPro;
 
 public class CharaBehaviour : MonoBehaviour
 {
@@ -12,7 +15,11 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Animator charaAnimator;
     [SerializeField] private GameScript gameScript;
+    [SerializeField] private Shield shield;
+    [SerializeField] TMP_Text _collectibleText;
 
+    public static event Action OnShieldDestroy;
+    public static event Action<int> numberCollected;
     private void Start()
     {
         Time.timeScale = 1.0f;
@@ -48,10 +55,18 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Barrier"))
         {
-            Time.timeScale = 0.0f;
-            IsAlive = false;
-            charaAnimator.SetBool("IsDead", true);
-            gameScript.EndGame();
+            if (shield.shielded)
+            {
+                OnShieldDestroy?.Invoke();
+            }
+            else
+            {
+                Time.timeScale = 0.0f;
+                IsAlive = false;
+                charaAnimator.SetBool("IsDead", true);
+                gameScript.EndGame();
+            }
+
         }
     }
 
@@ -80,5 +95,11 @@ public class CharaBehaviour : MonoBehaviour
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, 12f);
         }
+    }
+    
+    private void UpdateText()
+    {
+
+        _collectibleText.text = $"Score";
     }
 }

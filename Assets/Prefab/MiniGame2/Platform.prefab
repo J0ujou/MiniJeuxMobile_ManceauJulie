@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5405348791759994097}
   - component: {fileID: 6947806885423061464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cakeHalfAltRight_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8168121232082342545}
   - component: {fileID: 2253750407669037598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cakeHalfAltLeft_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 7261528799199918584}
   - component: {fileID: -8468204817231932138}
   - component: {fileID: 4039126703977278310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,8 +270,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3112141189036709214}
   - component: {fileID: 5877815341061924521}
-  - component: {fileID: 1065879029519294123}
-  m_Layer: 0
+  - component: {fileID: 6136414136863113820}
+  m_Layer: 6
   m_Name: cakeHalfAltMid_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,13 +352,16 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!65 &1065879029519294123
-BoxCollider:
+--- !u!61 &6136414136863113820
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137514100593931017}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -367,9 +370,31 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.0988398, y: 0.42, z: 0.2}
-  m_Center: {x: 0.003081143, y: 0, z: 0}
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.000000059604645, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7, y: 0.42}
+    newSize: {x: 0.7, y: 0.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.1000686, y: 0.42}
+  m_EdgeRadius: 0

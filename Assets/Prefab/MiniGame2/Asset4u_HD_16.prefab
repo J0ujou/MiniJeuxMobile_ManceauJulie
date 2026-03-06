@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2565927854217260142}
   - component: {fileID: 8905106990997875015}
   - component: {fileID: 3695899760092354606}
-  - component: {fileID: 82073631609712606}
+  - component: {fileID: 950184209391501235}
   m_Layer: 0
   m_Name: Asset4u_HD_16
   m_TagString: Barrier
@@ -136,8 +136,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &82073631609712606
-BoxCollider2D:
+--- !u!60 &950184209391501235
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.034098804, y: 0.33088383}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.52643317, y: 0.12399569}
@@ -180,5 +180,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1000153, y: 0.68209904}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.57090116, y: 0.36088377}
+      - {x: 0.51090115, y: 0.57088375}
+      - {x: 0.47090116, y: 0.62088376}
+      - {x: 0.36090118, y: 0.70088375}
+      - {x: 0.21090119, y: 0.74088377}
+      - {x: -0.4190988, y: 0.74088377}
+      - {x: -0.4990988, y: 0.69088376}
+      - {x: -0.5890988, y: 0.6008838}
+      - {x: -0.6490988, y: 0.4708838}
+      - {x: -0.6490988, y: 0.26088378}
+      - {x: -0.6390988, y: 0.17088379}
+      - {x: -0.6190988, y: 0.080883786}
+      - {x: -0.4190988, y: -0.06911621}
+      - {x: 0.4109012, y: -0.06911621}
+      - {x: 0.5309012, y: 0.010883789}
+      - {x: 0.57090116, y: 0.13088378}
+  m_UseDelaunayMesh: 1

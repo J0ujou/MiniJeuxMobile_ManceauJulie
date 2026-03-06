@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6273086646299781058}
   - component: {fileID: 7037167597237338942}
   - component: {fileID: -4978263532313339945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5297397213004628919}
   - component: {fileID: 5790222074708971859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cakeHalfLeft_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7249538403389325586}
   - component: {fileID: 4521025201370551506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cakeHalfRight_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 7951287374795922668}
   - component: {fileID: 5734715548784451530}
   - component: {fileID: 3174188872257007741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cakeHalfMid_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

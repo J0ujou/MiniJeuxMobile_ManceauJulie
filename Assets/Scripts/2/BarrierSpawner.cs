@@ -6,18 +6,19 @@ public class BarrierSpawner : MonoBehaviour
     
     [Header("Spawing Details")]
     [SerializeField] private float _maxSpawnInterval = 4f;
-    [SerializeField] private float _minSpawnInterval = 4f;
+    [SerializeField] private float _minSpawnInterval = 2f;
+    private float _spawnInterval = 4f;
 
     private float timer =0f;
 
     private void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= _maxSpawnInterval)
+        if (timer >= _spawnInterval)
         {
             SpawnBarrier();
             timer = 0f;
-            _maxSpawnInterval= Random.Range(_minSpawnInterval, _maxSpawnInterval);
+            _spawnInterval= Random.Range(_minSpawnInterval, _maxSpawnInterval);
         }
     }
 
