@@ -17,6 +17,7 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] private GameScript gameScript;
     [SerializeField] private Shield shield;
     [SerializeField] TMP_Text _collectibleText;
+    [SerializeField] private GameObject loosePanel;
     private int NbCollectible = 0;
     [SerializeField] private int NbForShield = 3;
 
@@ -69,6 +70,7 @@ public class CharaBehaviour : MonoBehaviour
                 Time.timeScale = 0.0f;
                 IsAlive = false;
                 charaAnimator.SetBool("IsDead", true);
+                loosePanel.SetActive(true);
                 gameScript.EndGame();
             }
 

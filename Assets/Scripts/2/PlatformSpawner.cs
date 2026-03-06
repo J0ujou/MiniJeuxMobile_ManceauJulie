@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _platformObjects;
+    [SerializeField] private GellySpawner _gellySpawner;
     
     [SerializeField] private float _maxSpawnInterval = 4f;
     [SerializeField] private float _minSpawnInterval = 4f;
@@ -14,7 +15,7 @@ public class PlatformSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= _spawnInterval)
         {
-            SpawnBarrier();
+            SpawnPlatform();
             timer = 0f;
             _spawnInterval= Random.Range(_minSpawnInterval, _maxSpawnInterval);
         }
@@ -24,8 +25,9 @@ public class PlatformSpawner : MonoBehaviour
     {
         return Random.Range(0, _platformObjects.Length);
     }
-    private void SpawnBarrier()
+    private void SpawnPlatform()
     {
-        Instantiate(_platformObjects[Randomplatform()], transform.position, Quaternion.identity);
+        _gellySpawner.SpawnGelly();
+        Instantiate(_platformObjects[Randomplatform()], transform.position + new Vector3(3f, 0f, 0f), Quaternion.identity);
     }
 }

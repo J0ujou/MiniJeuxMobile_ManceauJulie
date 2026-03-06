@@ -668,7 +668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &320992269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,6 +683,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BarrierSpawner
   _barrierObjects:
   - {fileID: 8747509158701037505, guid: e54ca97bd509db240920788c1a7863aa, type: 3}
+  _gellySpawner: {fileID: 0}
+  _collectibleSpawner: {fileID: 0}
   _maxSpawnInterval: 8
   _minSpawnInterval: 4
 --- !u!4 &320992270
@@ -884,6 +886,7 @@ MonoBehaviour:
   gameScript: {fileID: 615067015}
   shield: {fileID: 2065984009}
   _collectibleText: {fileID: 0}
+  loosePanel: {fileID: 2129904603}
   NbForShield: 3
 --- !u!95 &338636493
 Animator:
@@ -1859,7 +1862,6 @@ MonoBehaviour:
   highscorePanel: {fileID: 1023478030}
   highscoreText: {fileID: 1538063793}
   scoreText: {fileID: 2079663380}
-  loosePanel: {fileID: 2129904603}
   uiCandyRainGameOverAnimator: {fileID: 2129904605}
 --- !u!1 &699769562
 GameObject:
@@ -2354,6 +2356,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3040731374506662098, guid: 4acf9da02f5e23f469c38527e62a6788, type: 3}
+      propertyPath: gameName
+      value: RunNJump
+      objectReference: {fileID: 0}
     - target: {fileID: 5629721294994449747, guid: 4acf9da02f5e23f469c38527e62a6788, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
@@ -2827,9 +2833,11 @@ MonoBehaviour:
   _barrierObjects:
   - {fileID: 6665713879340211046, guid: 4714f3884ae87fc4784dbae5f21df40b, type: 3}
   - {fileID: 609608955956372793, guid: f2026cb598f04df4a8e3ffcc202f2c5f, type: 3}
-  - {fileID: 3709794619455458305, guid: 56157050e0a8c1b4e89863ac97474d43, type: 3}
+  - {fileID: 8747509158701037505, guid: e54ca97bd509db240920788c1a7863aa, type: 3}
+  _gellySpawner: {fileID: 20559868}
+  _collectibleSpawner: {fileID: 1646926988}
   _maxSpawnInterval: 4
-  _minSpawnInterval: 2
+  _minSpawnInterval: 1
 --- !u!1 &1461448906
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,6 +3807,7 @@ MonoBehaviour:
   - {fileID: 6283389927855234166, guid: 27d0579634735f4419a5fcfda7332dba, type: 3}
   - {fileID: 1284919202717983385, guid: 07702bbb8ecec0445b32df4a0c2de718, type: 3}
   - {fileID: 3108230354405331695, guid: 03a6fd73516c29242ac739f8b7501f63, type: 3}
+  _gellySpawner: {fileID: 20559868}
   _maxSpawnInterval: 7
   _minSpawnInterval: 4
 --- !u!4 &1948171471

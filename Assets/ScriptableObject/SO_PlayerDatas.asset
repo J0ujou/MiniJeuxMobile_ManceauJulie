@@ -12,9 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c490331b8e34ca438ef1f00de39c9e2, type: 3}
   m_Name: SO_PlayerDatas
   m_EditorClassIdentifier: Assembly-CSharp::SO_PlayerDatas
-  Name: 
+  Name: kk
   Score: 1
   Level: 0
-  highscoresRNJ: []
-  highscoresGNW: []
+  highscoresRNJ:
+  - playerName: kk
+    Score: 62
+  - playerName: kk
+    Score: 26
+  - playerName: kk
+    Score: 25
+  - playerName: kk
+    Score: 25
+  - playerName: kk
+    Score: 23
+  - playerName: kk
+    Score: 22
+  - playerName: kk
+    Score: 17
+  - playerName: kk
+    Score: 17
+  - playerName: kk
+    Score: 15
+  - playerName: kk
+    Score: 15
+  highscoresGNW:
+  - playerName: 
+    Score: 110
+  - playerName: 
+    Score: 79
+  - playerName: 
+    Score: 14
+  - playerName: 
+    Score: 14
+  - playerName: 
+    Score: 14
+  - playerName: 
+    Score: 12
+  - playerName: 
+    Score: 10
+  - playerName: 
+    Score: 6
+  - playerName: 
+    Score: 5
+  - playerName: 
+    Score: 3
   highscoresSG: []

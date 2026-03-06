@@ -10,7 +10,6 @@ public class GameScript : MonoBehaviour
    [SerializeField] private GameObject highscorePanel;
    [SerializeField] private TMP_Text highscoreText;
    [SerializeField] private TMP_Text scoreText;
-   [SerializeField] private GameObject loosePanel;
    [SerializeField] public Animator uiCandyRainGameOverAnimator;
 
     private int playerScore = 0;
@@ -42,8 +41,9 @@ public class GameScript : MonoBehaviour
 
     public void EndGame()
     {
+        Debug.Log("EndGame");
+        highscorePanel.SetActive(true);
         //_audioEventDispatcher.Playaudio(_death);
-        loosePanel.SetActive(true);
         //SaveScore?.Invoke();
         uiCandyRainGameOverAnimator.SetTrigger("Loose");
             if (playerDatas.IsBestScore(gameName, playerScore))

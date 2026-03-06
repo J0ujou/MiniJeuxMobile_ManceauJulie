@@ -22,7 +22,7 @@ public class CollectibleSpawner : MonoBehaviour
             }
         }
     }
-    private void SpawnCollectible()
+    public void SpawnCollectible()
     {
         Instantiate(CollectiblePrefab, transform.position, Quaternion.identity);
     }
