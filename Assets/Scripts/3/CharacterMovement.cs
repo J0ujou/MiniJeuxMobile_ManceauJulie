@@ -16,6 +16,8 @@ public class CharacterMovement : MonoBehaviour
     
     [SerializeField] public SweetsList[] sweetsPrefabs;
     
+    [SerializeField] PlayerInputSuika playerInputSuika;
+    
     private GameObject nextSweet;
     private int nextSweetIndex;
     private GameObject NextnextSweet;
@@ -24,6 +26,7 @@ public class CharacterMovement : MonoBehaviour
     private bool Wait = true;
     
     public static event Action<Sprite> OnNextnextSweetChanged;
+    
 
     [SerializeField] private float sideGapForBiggerSweet =0.07f;
     private float defaultYPosition = 3.78f;
@@ -32,40 +35,68 @@ public class CharacterMovement : MonoBehaviour
     {
         LoadNextSweet();
     }
+
+    private void OnEnable()
+    {
+        playerInputSuika.OnMoveLeft += MoveLeft;
+        playerInputSuika.OnMoveRight += MoveRight;
+        playerInputSuika.OnDropSweet += DropSweet;
+    }
+
+    private void OnDisable()
+    {
+        playerInputSuika.OnMoveLeft -= MoveLeft;
+        playerInputSuika.OnMoveRight -= MoveRight;
+        playerInputSuika.OnDropSweet -= DropSweet;
+    }
     
     private void Update()
     {
-        
-        if (Input.anyKey)
-        {
-            Debug.Log("Une touche est pressée");
-        }
-
         if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > currentMinXposition)
         {
-            Debug.Log("kk");
-            transform.position -= new Vector3(5 * Time.deltaTime, 0f, 0f);
+            MoveLeft();
         }
         else if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < currentMaxXposition)
         {
-            transform.position += new Vector3(5 * Time.deltaTime, 0f, 0f);
+            MoveRight();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Wait == true)
-            {
-                Wait = false;
-                GameObject newSweet = Instantiate(nextSweet);
-                newSweet.transform.position = transform.position;
+           DropSweet();
+        }
+    }
 
-                Sweets newSweetScript = newSweet.GetComponent<Sweets>();
-                newSweetScript.characterMovement = this;
-                newSweetScript.SweetIndex = nextSweetIndex;
+    private void DropSweet()
+    {
+        if (Wait == true)
+        {
+            Wait = false;
+            GameObject newSweet = Instantiate(nextSweet);
+            newSweet.transform.position = transform.position;
 
-                LoadNextSweet();
-                StartCoroutine(Cooldown());
-            }
+            Sweets newSweetScript = newSweet.GetComponent<Sweets>();
+            newSweetScript.characterMovement = this;
+            newSweetScript.SweetIndex = nextSweetIndex;
+
+            LoadNextSweet();
+            StartCoroutine(Cooldown());
+        }
+    }
+
+    private void MoveLeft()
+    {
+        if (transform.position.x > currentMinXposition)
+        {
+            transform.position -= new Vector3(5 * Time.deltaTime, 0f, 0f);
+        }
+    }
+
+    private void MoveRight()
+    {
+        if (transform.position.x < currentMaxXposition)
+        {
+            transform.position += new Vector3(5 * Time.deltaTime, 0f, 0f);
         }
     }
 

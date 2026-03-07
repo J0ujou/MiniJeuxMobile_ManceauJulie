@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7521672431654685506}
   - component: {fileID: 3637214301495223465}
   - component: {fileID: 1641214152659918930}
+  - component: {fileID: 7196852107901058475}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -130,6 +131,20 @@ MonoBehaviour:
     points: 18
   - prefab: {fileID: 8808204686873962946, guid: 5fc3896b419c5614c94a66ee212f5a33, type: 3}
     points: 20
-  nextSweet: {fileID: 0}
-  nextSweetIndex: 0
+  - prefab: {fileID: 8808204686873962946, guid: 217a27aacf9d2894b98ff4b88e322fee, type: 3}
+    points: 22
+  playerInputSuika: {fileID: 7196852107901058475}
+  sideGapForBiggerSweet: 0.07
+--- !u!114 &7196852107901058475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014620414986113405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cdcb7521b73d043ad5243fb1feec44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputSuika
   _tapDuration: 1
