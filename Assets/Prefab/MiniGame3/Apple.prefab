@@ -169,16 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e8897d48812b747975efcfb17eb8ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sweets
-  sweetsPrefabs:
-  - {fileID: 7344990508368819555, guid: cd06556f7cb36c0439ffd3bca52c732d, type: 3}
-  - {fileID: 3767279178179768318, guid: d081b4ad55e95404591f2a534076fb66, type: 3}
-  - {fileID: 1706070406270099535, guid: 23322c5b8da797f43926efb0aac46f59, type: 3}
-  - {fileID: 5395380445830335502, guid: 46c496868ec5a7a49b1903d25e28f82d, type: 3}
-  - {fileID: 6553708462906768301, guid: 734adc3a8da23d346a30ea6ce7610ff1, type: 3}
-  - {fileID: 2281860178215531844}
-  - {fileID: 2990858345594325215, guid: cbd51ec2fb055454998b0e95a5a14857, type: 3}
-  - {fileID: 5978388840450694357, guid: add888b11772af6449ab9c92a59a5588, type: 3}
-  - {fileID: 2138338461358868270, guid: ba6aea38f460f6649986c15e915da433, type: 3}
-  - {fileID: 678878802095461423, guid: 6f4d9c7b7c4c1c5439880ca066480bdd, type: 3}
-  - {fileID: 8808204686873962946, guid: 5fc3896b419c5614c94a66ee212f5a33, type: 3}
   SweetIndex: 5
+  characterMovement: {fileID: 1641214152659918930, guid: c2aee212d89ab9345a7afb08f5b02083, type: 3}
+  hasBeenDropped: 0
