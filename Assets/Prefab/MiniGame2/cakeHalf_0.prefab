@@ -155,6 +155,7 @@ MonoBehaviour:
   _barrierMovementSpeed: 5
   _screenExit: -10
   _barrierRigidbody: {fileID: 0}
+  scoreDatas: {fileID: 11400000, guid: 0c384c72442791947a00a005f8e77df9, type: 2}
 --- !u!50 &-1309602828105003309
 Rigidbody2D:
   serializedVersion: 5

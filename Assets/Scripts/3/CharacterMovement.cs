@@ -28,9 +28,11 @@ public class CharacterMovement : MonoBehaviour
             GameObject newSweet = Instantiate(sweetsPrefabs[randomSweetIndex]);
             newSweet.transform.position = transform.position;
             
-            // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
-            Sweets newSweetScript= newSweet.GetComponent<Sweets>();
+            Sweets newSweetScript = newSweet.GetComponent<Sweets>();
+            newSweetScript.characterMovement = this;
             newSweetScript.SweetIndex = randomSweetIndex;
+            
+            
         }
     }
 

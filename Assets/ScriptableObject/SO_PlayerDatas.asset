@@ -15,27 +15,7 @@ MonoBehaviour:
   Name: kk
   Score: 1
   Level: 0
-  highscoresRNJ:
-  - playerName: kk
-    Score: 62
-  - playerName: kk
-    Score: 26
-  - playerName: kk
-    Score: 25
-  - playerName: kk
-    Score: 25
-  - playerName: kk
-    Score: 23
-  - playerName: kk
-    Score: 22
-  - playerName: kk
-    Score: 17
-  - playerName: kk
-    Score: 17
-  - playerName: kk
-    Score: 15
-  - playerName: kk
-    Score: 15
+  highscoresRNJ: []
   highscoresGNW:
   - playerName: 
     Score: 110

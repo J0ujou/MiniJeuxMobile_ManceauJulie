@@ -136,6 +136,7 @@ MonoBehaviour:
   _barrierMovementSpeed: 5
   _screenExit: -10
   _barrierRigidbody: {fileID: 4413830288210805351}
+  scoreDatas: {fileID: 11400000, guid: 0c384c72442791947a00a005f8e77df9, type: 2}
 --- !u!60 &6393094173855409581
 PolygonCollider2D:
   m_ObjectHideFlags: 0

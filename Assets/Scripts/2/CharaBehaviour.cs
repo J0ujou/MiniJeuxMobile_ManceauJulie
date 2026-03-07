@@ -115,7 +115,7 @@ public class CharaBehaviour : MonoBehaviour
         charaAnimator.SetBool("IsJumping", true);
         if (IsAlive)
         {
-            CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, 12f);
+            CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, 14f);
         }
     }
     

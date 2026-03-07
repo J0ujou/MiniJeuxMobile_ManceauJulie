@@ -18,10 +18,20 @@ public class BarrierSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= _spawnInterval)
         {
-            var fonctions = new System.Action[] { SpawnBarrier, _gellySpawner.SpawnGelly, _collectibleSpawner.SpawnCollectible };
-
-            int choix = Random.Range(0, fonctions.Length);
-            fonctions[choix]();
+            //var fonctions = new System.Action[] { SpawnBarrier, _gellySpawner.SpawnGelly, _collectibleSpawner.SpawnCollectible };
+            int rand = Random.Range(0, 100);
+            if (rand < 50)
+            {
+                SpawnBarrier();
+            }
+            else if (rand < 80)
+            {
+                _gellySpawner.SpawnGelly();
+            }
+            else
+            {
+                _collectibleSpawner.SpawnCollectible();
+            }
             //SpawnBarrier();
             timer = 0f;
             _spawnInterval= Random.Range(_minSpawnInterval, _maxSpawnInterval);

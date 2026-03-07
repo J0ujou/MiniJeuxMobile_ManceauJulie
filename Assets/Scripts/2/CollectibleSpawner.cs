@@ -14,16 +14,18 @@ public class CollectibleSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            if (!shield.shielded)
-            {
-                SpawnCollectible();
+                //SpawnCollectible();
                 timer = 0f;
                 spawnInterval = Random.Range(_minSpawnInterval, _maxSpawnInterval);
-            }
+            
         }
     }
     public void SpawnCollectible()
     {
-        Instantiate(CollectiblePrefab, transform.position, Quaternion.identity);
+        if (shield.shielded == false)
+        {
+            Instantiate(CollectiblePrefab, transform.position, Quaternion.identity);
+        }
+        
     }
 }

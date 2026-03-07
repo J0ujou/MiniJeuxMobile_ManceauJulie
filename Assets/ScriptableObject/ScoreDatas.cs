@@ -5,4 +5,5 @@ public class ScoreDatas : ScriptableObject
 {
     public int ScoreValue = 0;
     public int Level =  1;
+    public float BarrierSpeed = 5f;
 }

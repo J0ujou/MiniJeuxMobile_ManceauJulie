@@ -46,15 +46,16 @@ public class PlayerInput : MonoBehaviour
       if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Began)
       {
         _isTouching = true;
+        if (_tapTimer <= _tapDuration)
+        {
+          jump?.Invoke();
+          Debug.LogWarning("Tap OK Touch");
+        }
       }
       else if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Ended)
       {
         _isTouching = false;
-        if (_tapTimer <= _tapDuration)
-        {
-          Debug.LogWarning("Tap OK Touch");
-          jump?.Invoke();
-        }
+
       }
     }
   }

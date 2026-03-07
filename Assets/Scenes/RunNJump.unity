@@ -224,7 +224,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.9740999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -234,7 +234,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 25, y: 1}
+  m_Size: {x: 25, y: 0.8854003}
   m_EdgeRadius: 0
 --- !u!4 &79451538
 Transform:
@@ -661,32 +661,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 320992270}
-  - component: {fileID: 320992269}
+  - component: {fileID: 320992271}
   m_Layer: 0
   m_Name: ForkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &320992269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320992268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3756391f3cd3e6845a92799d6ab568f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BarrierSpawner
-  _barrierObjects:
-  - {fileID: 8747509158701037505, guid: e54ca97bd509db240920788c1a7863aa, type: 3}
-  _gellySpawner: {fileID: 0}
-  _collectibleSpawner: {fileID: 0}
-  _maxSpawnInterval: 8
-  _minSpawnInterval: 4
+  m_IsActive: 1
 --- !u!4 &320992270
 Transform:
   m_ObjectHideFlags: 0
@@ -702,6 +684,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &320992271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320992268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1a079c27846994882ffaec5644b280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForkSpawner
+  ForkPrefab: {fileID: 8747509158701037505, guid: e54ca97bd509db240920788c1a7863aa, type: 3}
+  _maxSpawnInterval: 8
+  _minSpawnInterval: 4
 --- !u!1 &338636487
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,10 +808,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 1.4
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1.5
+  m_AngularDamping: 0
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -825,7 +822,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!70 &338636491
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -877,8 +874,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   IsAlive: 1
   CharaRigidbody: {fileID: 338636490}
-  _jumpHeight: 8
-  _rayLength: 1
+  _jumpHeight: 10
+  _rayLength: 1.5
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -934,6 +931,10 @@ PrefabInstance:
     - target: {fileID: 4622779117658131081, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_Name
       value: Collectible (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622779117658131081, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -991,6 +992,10 @@ PrefabInstance:
     - target: {fileID: 4622779117658131081, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_Name
       value: Collectible (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622779117658131081, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1858,11 +1863,22 @@ MonoBehaviour:
   _charaBehaviour: {fileID: 338636492}
   _scoreText: {fileID: 699769564}
   playerDatas: {fileID: 11400000, guid: f4fae01b677334547a844cfd9fa46af3, type: 2}
+  scoreDatas: {fileID: 11400000, guid: 0c384c72442791947a00a005f8e77df9, type: 2}
   gameName: RunNJump
   highscorePanel: {fileID: 1023478030}
   highscoreText: {fileID: 1538063793}
   scoreText: {fileID: 2079663380}
   uiCandyRainGameOverAnimator: {fileID: 2129904605}
+  barrierBehaviour:
+  - {fileID: 8905106990997875015, guid: f2026cb598f04df4a8e3ffcc202f2c5f, type: 3}
+  - {fileID: 2916332920150406200, guid: 4714f3884ae87fc4784dbae5f21df40b, type: 3}
+  - {fileID: -44748983791420438, guid: be8f75aa812603b43baee6596a1a79b1, type: 3}
+  - {fileID: 1265622561992894629, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
+  - {fileID: 485810647388173173, guid: 27d0579634735f4419a5fcfda7332dba, type: 3}
+  - {fileID: 2046136013637927529, guid: e54ca97bd509db240920788c1a7863aa, type: 3}
+  - {fileID: 6641720337351434310, guid: d2d17135176e3fd4b9718c97f36e23ba, type: 3}
+  - {fileID: 4039126703977278310, guid: 07702bbb8ecec0445b32df4a0c2de718, type: 3}
+  ScoreToLevelUp: 20
 --- !u!1 &699769562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,10 +2849,9 @@ MonoBehaviour:
   _barrierObjects:
   - {fileID: 6665713879340211046, guid: 4714f3884ae87fc4784dbae5f21df40b, type: 3}
   - {fileID: 609608955956372793, guid: f2026cb598f04df4a8e3ffcc202f2c5f, type: 3}
-  - {fileID: 8747509158701037505, guid: e54ca97bd509db240920788c1a7863aa, type: 3}
   _gellySpawner: {fileID: 20559868}
   _collectibleSpawner: {fileID: 1646926988}
-  _maxSpawnInterval: 4
+  _maxSpawnInterval: 3
   _minSpawnInterval: 1
 --- !u!1 &1461448906
 GameObject:
@@ -3591,7 +3606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1646926988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5342,6 +5357,10 @@ PrefabInstance:
     - target: {fileID: 4622779117658131081, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_Name
       value: Collectible
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622779117658131081, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.x

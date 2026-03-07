@@ -25,7 +25,7 @@ public class GellySpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            SpawnGelly();
+            //SpawnGelly();
             timer = 0f;
             spawnInterval= Random.Range(_minSpawnInterval, _maxSpawnInterval);
         }

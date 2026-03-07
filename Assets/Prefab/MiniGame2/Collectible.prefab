@@ -195,3 +195,4 @@ MonoBehaviour:
   _barrierMovementSpeed: 5
   _screenExit: -10
   _barrierRigidbody: {fileID: 9179901307591184680}
+  scoreDatas: {fileID: 11400000, guid: 0c384c72442791947a00a005f8e77df9, type: 2}

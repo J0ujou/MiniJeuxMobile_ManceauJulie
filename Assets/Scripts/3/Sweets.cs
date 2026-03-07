@@ -6,6 +6,7 @@ public class Sweets : MonoBehaviour
 {
     public GameObject[] sweetsPrefabs;
     public int SweetIndex;
+    public CharacterMovement characterMovement;
 
     
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,8 +20,8 @@ public class Sweets : MonoBehaviour
                 Debug.Log("Sweet");
                 GameObject nextSweet = Instantiate(sweetsPrefabs[SweetIndex + 1]);
                 nextSweet.transform.position = transform.position;
-                Destroy(gameObject);
                 Destroy(collidedSweet.gameObject);
+                Destroy(gameObject);
             }
         }
     }
