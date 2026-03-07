@@ -17,10 +17,17 @@ public class Sweets : MonoBehaviour
             
             if (collidedSweet.SweetIndex == SweetIndex)
             {
+                if(!gameObject.activeSelf || !collision.gameObject.activeSelf)
+                    return;
+                
+                collision.gameObject.SetActive(false);
+                Destroy(collision.gameObject);
+                
                 Debug.Log("Sweet");
                 GameObject nextSweet = Instantiate(sweetsPrefabs[SweetIndex + 1]);
                 nextSweet.transform.position = transform.position;
-                Destroy(collidedSweet.gameObject);
+                
+                gameObject.SetActive(false);
                 Destroy(gameObject);
             }
         }
