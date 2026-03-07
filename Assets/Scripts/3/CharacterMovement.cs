@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > minXposition)
         {
+            Debug.Log("kk");
             transform.position -= new Vector3(5* Time.deltaTime,0f,0f);
         }
         else if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < maxXposition)
