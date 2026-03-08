@@ -9,7 +9,6 @@ public class ShieldCollectibles : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("kk");
             Destroy(gameObject);
         }
     }

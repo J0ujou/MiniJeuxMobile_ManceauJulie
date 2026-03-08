@@ -146,12 +146,12 @@ TextureImporter:
       name: ParticlesSprietAtlasSprinkles_0
       rect:
         serializedVersion: 2
-        x: 116
-        y: 2692
-        width: 300
-        height: 300
+        x: 0
+        y: 2564
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: ParticlesSprietAtlasSprinkles_1
       rect:
         serializedVersion: 2
-        x: 615
-        y: 2688
-        width: 300
-        height: 300
+        x: 501
+        y: 2564
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,7 +195,7 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,7 +217,7 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,7 +239,7 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,7 +261,7 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -283,7 +283,7 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,7 +305,7 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -314,6 +314,94 @@ TextureImporter:
       bones: []
       spriteID: 6ab2d32e907a24049bc04e2aac5574a8
       internalID: 145081552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticlesSprietAtlasSprinkles_8
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 2564
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591cae9a2a30b104dbd3931efdd992ef
+      internalID: -1962940419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticlesSprietAtlasSprinkles_9
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 2556
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6959fe0521658214ca604722f2213be9
+      internalID: 1513230559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticlesSprietAtlasSprinkles_10
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 2567
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c051992266a574cae36bf1cf0b9812
+      internalID: 1403021826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticlesSprietAtlasSprinkles_11
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 2564
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1189758985b5e4f862f5036a40030a
+      internalID: -29533827
       vertices: []
       indices: 
       edges: []
@@ -334,12 +422,16 @@ TextureImporter:
     nameFileIdTable:
       ParticlesSprietAtlasSprinkles_0: -1200273580
       ParticlesSprietAtlasSprinkles_1: 1429157914
+      ParticlesSprietAtlasSprinkles_10: 1403021826
+      ParticlesSprietAtlasSprinkles_11: -29533827
       ParticlesSprietAtlasSprinkles_2: 1519225492
       ParticlesSprietAtlasSprinkles_3: 1197865124
       ParticlesSprietAtlasSprinkles_4: -438582761
       ParticlesSprietAtlasSprinkles_5: -267952573
       ParticlesSprietAtlasSprinkles_6: 72295304
       ParticlesSprietAtlasSprinkles_7: 145081552
+      ParticlesSprietAtlasSprinkles_8: -1962940419
+      ParticlesSprietAtlasSprinkles_9: 1513230559
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

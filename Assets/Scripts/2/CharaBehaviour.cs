@@ -14,6 +14,7 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] private float _rayLength = 1.0f;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Animator charaAnimator;
+    [SerializeField] private Animator JumpFXAnimator;
     [SerializeField] private GameScript gameScript;
     [SerializeField] private Shield shield;
     [SerializeField] TMP_Text _collectibleText;
@@ -54,6 +55,7 @@ public class CharaBehaviour : MonoBehaviour
         {
             charaAnimator.SetBool("IsJumping", false);
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -64,6 +66,7 @@ public class CharaBehaviour : MonoBehaviour
             {
                 OnShieldDestroy?.Invoke();
                 Destroy(collision.gameObject);
+                UpdateText();
             }
             else
             {
@@ -81,11 +84,11 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
-            Debug.Log(NbCollectible);
             NbCollectible++;
+            UpdateText();
             if (NbCollectible >= NbForShield)
             {
-                Debug.Log("enfin");
+
                 NbCollectible = 0;
                 Shieldcreation?.Invoke();
             }
@@ -98,6 +101,7 @@ public class CharaBehaviour : MonoBehaviour
         if (callbackContext.started && IsGrounded && IsAlive)
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, _jumpHeight);
+            JumpFXAnimator.SetTrigger("Jumped");
         }
     }
     
@@ -107,6 +111,7 @@ public class CharaBehaviour : MonoBehaviour
         if (IsGrounded && IsAlive)
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, _jumpHeight);
+            JumpFXAnimator.SetTrigger("Jumped");
         }
     }
 
@@ -116,12 +121,12 @@ public class CharaBehaviour : MonoBehaviour
         if (IsAlive)
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, 14f);
+            JumpFXAnimator.SetTrigger("Jumped");
         }
     }
     
     private void UpdateText()
     {
-
-        _collectibleText.text = $"Score";
+        _collectibleText.text = $"{NbCollectible.ToString()}/3";
     }
 }

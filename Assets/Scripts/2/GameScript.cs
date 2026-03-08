@@ -19,6 +19,7 @@ public class GameScript : MonoBehaviour
    [SerializeField] public Animator uiFireWorkAnimator;
    
    private static bool AlreadyPlayed = false;
+   [SerializeField] private GameObject[] TutoElements;
    
    
    //[SerializeField] public BarrierBehaviour[] barrierBehaviour;
@@ -32,7 +33,10 @@ public class GameScript : MonoBehaviour
     {
         if (AlreadyPlayed)
         {
-            return;
+            foreach (GameObject go in TutoElements)
+            {
+                go.SetActive(false);
+            }
         }
         else
         {
