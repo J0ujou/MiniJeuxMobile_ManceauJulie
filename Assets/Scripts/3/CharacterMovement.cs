@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
     [SerializeField] private float minXposition = -2.6f;
     [SerializeField] private float maxXposition = 2.6f;
     
@@ -88,7 +87,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (transform.position.x > currentMinXposition)
         {
-            transform.position -= new Vector3(5 * Time.deltaTime, 0f, 0f);
+            transform.position -= new Vector3(12 * Time.deltaTime, 0f, 0f);
         }
     }
 
@@ -96,7 +95,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (transform.position.x < currentMaxXposition)
         {
-            transform.position += new Vector3(5 * Time.deltaTime, 0f, 0f);
+            transform.position += new Vector3(12 * Time.deltaTime, 0f, 0f);
         }
     }
 

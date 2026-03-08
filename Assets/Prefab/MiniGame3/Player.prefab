@@ -105,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5708d5f3fd4a5e4ba74e22faf200d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  speed: 5
   minXposition: -2.6
   maxXposition: 2.6
   sweetsPrefabs:
@@ -147,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cdcb7521b73d043ad5243fb1feec44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputSuika
-  _tapDuration: 1
+  _tapDuration: 0.1
