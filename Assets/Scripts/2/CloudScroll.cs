@@ -1,14 +1,11 @@
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
-public class BackgroundScroll : MonoBehaviour
+public class CloudScroll : MonoBehaviour
 {
-    public float scrollSpeed = 5f;
-    [SerializeField] ScoreDatas scoreDatas;
+    public float scrollSpeed = 2f;
 
     void Update()
     {
-        scrollSpeed = scoreDatas.BarrierSpeed;
         transform.Translate(Vector2.left * (scrollSpeed * Time.deltaTime));
         if (transform.position.x < -23f)
         {

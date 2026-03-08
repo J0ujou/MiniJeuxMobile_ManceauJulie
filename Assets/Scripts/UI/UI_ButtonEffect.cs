@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class UI_ButtonEffect : MonoBehaviour
     [SerializeField] private AudioType _lock;
     [SerializeField] private Animator _Lock1animator;
     [SerializeField] private Animator _Lock2animator;
+    [SerializeField] private Animator uiPresentationAnimator;
 
     public void ActiveHighScorePanel()
     {
@@ -58,5 +60,17 @@ public class UI_ButtonEffect : MonoBehaviour
     public void Lock2()
     {
         _Lock2animator.SetTrigger("Button2Pressed");
+    }
+
+    public void Play()
+    {
+        uiPresentationAnimator.SetTrigger("PlayPressed");
+        StartCoroutine(TapWait());
+    }
+
+    IEnumerator TapWait()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1;
     }
 }

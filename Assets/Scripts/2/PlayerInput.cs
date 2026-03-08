@@ -49,7 +49,6 @@ public class PlayerInput : MonoBehaviour
         if (_tapTimer <= _tapDuration)
         {
           jump?.Invoke();
-          Debug.LogWarning("Tap OK Touch");
         }
       }
       else if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Ended)

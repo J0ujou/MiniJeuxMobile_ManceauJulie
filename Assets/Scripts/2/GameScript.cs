@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 public class GameScript : MonoBehaviour
 {
    [SerializeField] private CharaBehaviour _charaBehaviour;
+   
    [SerializeField] TMP_Text _scoreText;
    [SerializeField] private SO_PlayerDatas playerDatas;
    [SerializeField] private ScoreDatas scoreDatas;
@@ -12,7 +13,12 @@ public class GameScript : MonoBehaviour
    [SerializeField] private GameObject highscorePanel;
    [SerializeField] private TMP_Text highscoreText;
    [SerializeField] private TMP_Text scoreText;
-   [SerializeField] public Animator uiCandyRainGameOverAnimator;
+   [SerializeField] public Animator uiGameOverAnimator;
+   [SerializeField] public Animator uiPresentationAnimator;
+   [SerializeField] public Animator uiLevelUpAnimator;
+   [SerializeField] public Animator uiFireWorkAnimator;
+   
+   
    //[SerializeField] public BarrierBehaviour[] barrierBehaviour;
    [SerializeField] private int ScoreToLevelUp = 20;
    private int ScorePerLevel;
@@ -22,8 +28,11 @@ public class GameScript : MonoBehaviour
 
     private void Start()
     {
+        scoreDatas.BarrierSpeed = 5;
         ScorePerLevel = 0;
         playerScore = 0;
+        Time.timeScale = 0;
+        uiPresentationAnimator.SetTrigger("Spawned");
     }
 
     private void Awake()
@@ -49,7 +58,6 @@ public class GameScript : MonoBehaviour
             {
                 ScorePerLevel++;
             }
-            Debug.Log(ScorePerLevel);
             playerScore += 1;
 
             scoreTimer = 0f;
@@ -65,6 +73,8 @@ public class GameScript : MonoBehaviour
             //barrierBehaviour[i]._barrierMovementSpeed = barrierBehaviour[i]._barrierMovementSpeed + 10;
         //}
         scoreDatas.BarrierSpeed += 2;
+        uiLevelUpAnimator.SetTrigger("LevelUp");
+        uiFireWorkAnimator.SetTrigger("LevelUp");
     }
 
     private void UpdateScoreText()
@@ -77,7 +87,7 @@ public class GameScript : MonoBehaviour
         Debug.Log("EndGame");
         //_audioEventDispatcher.Playaudio(_death);
         //SaveScore?.Invoke();
-        uiCandyRainGameOverAnimator.SetTrigger("Loose");
+        uiGameOverAnimator.SetTrigger("Loose");
             if (playerDatas.IsBestScore(gameName, playerScore))
             {
                 highscoreText.gameObject.SetActive(true);
@@ -88,6 +98,5 @@ public class GameScript : MonoBehaviour
                 playerDatas.AddHighscore(gameName, playerDatas.Name, playerScore);
             }
             scoreText.text = $"Score: {playerScore.ToString()}";
-            highscorePanel.SetActive(true);
     }
 }
