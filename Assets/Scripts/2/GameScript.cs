@@ -18,6 +18,8 @@ public class GameScript : MonoBehaviour
    [SerializeField] public Animator uiLevelUpAnimator;
    [SerializeField] public Animator uiFireWorkAnimator;
    
+   private static bool AlreadyPlayed = false;
+   
    
    //[SerializeField] public BarrierBehaviour[] barrierBehaviour;
    [SerializeField] private int ScoreToLevelUp = 20;
@@ -28,11 +30,18 @@ public class GameScript : MonoBehaviour
 
     private void Start()
     {
+        if (AlreadyPlayed)
+        {
+            return;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            uiPresentationAnimator.SetTrigger("Spawned"); 
+        }
         scoreDatas.BarrierSpeed = 5;
         ScorePerLevel = 0;
         playerScore = 0;
-        Time.timeScale = 0;
-        uiPresentationAnimator.SetTrigger("Spawned");
     }
 
     private void Awake()
@@ -84,6 +93,7 @@ public class GameScript : MonoBehaviour
 
     public void EndGame()
     {
+        AlreadyPlayed = true;
         Debug.Log("EndGame");
         //_audioEventDispatcher.Playaudio(_death);
         //SaveScore?.Invoke();
