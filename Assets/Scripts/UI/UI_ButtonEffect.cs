@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VectorGraphics;
 using Unity.VisualScripting;
@@ -13,6 +14,8 @@ public class UI_ButtonEffect : MonoBehaviour
     [SerializeField] private Animator _Lock1animator;
     [SerializeField] private Animator _Lock2animator;
     [SerializeField] private Animator uiPresentationAnimator;
+    
+    public event Action Tutorial;
 
     public void ActiveHighScorePanel()
     {
@@ -71,6 +74,14 @@ public class UI_ButtonEffect : MonoBehaviour
     IEnumerator TapWait()
     {
         yield return new WaitForSecondsRealtime(1.5f);
-        Time.timeScale = 1;
+        if (GameScript.AlreadyPlayed)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Tutorial?.Invoke();
+        }
+        
     }
 }

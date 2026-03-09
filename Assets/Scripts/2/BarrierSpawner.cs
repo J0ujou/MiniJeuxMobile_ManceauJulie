@@ -8,7 +8,7 @@ public class BarrierSpawner : MonoBehaviour
     [Header("Spawing Details")]
     [SerializeField] private float _maxSpawnInterval = 4f;
     [SerializeField] private float _minSpawnInterval = 2f;
-    private float _spawnInterval = 4f;
+    private float _spawnInterval = 5f;
     
 
     private float timer =0f;

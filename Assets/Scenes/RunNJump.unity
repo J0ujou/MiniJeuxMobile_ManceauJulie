@@ -546,6 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 71498230}
+  - component: {fileID: 71498231}
   m_Layer: 0
   m_Name: Tutoriel
   m_TagString: Untagged
@@ -575,6 +576,28 @@ Transform:
   - {fileID: 335776952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &71498231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71498229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fc2caca444a064187cc934e3978036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialScript
+  uiButtonEffect: {fileID: 2090527320}
+  Textzone: {fileID: 335776951}
+  BarrierText: {fileID: 0}
+  ShieldText: {fileID: 0}
+  GellyText: {fileID: 0}
+  TutoTexts:
+  - {fileID: 1502167085}
+  - {fileID: 203846649}
+  - {fileID: 1693310005}
+  ArrowAnimator: {fileID: 691565583}
 --- !u!1 &79451536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1193,7 @@ MonoBehaviour:
   m_text: "R\xE9cup\xE8re des fragments de bubblegum pour te cr\xE9er un bouclier
     de deuxi\xE8me chance"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7f6a738cfa8347f47bb4be5d30e15cb0, type: 2}
   m_sharedMaterial: {fileID: -8981680998356115575, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1240,7 +1263,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 203846652}
   m_maskType: 0
 --- !u!23 &203846652
@@ -1959,7 +1982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &335776952
 Transform:
   m_ObjectHideFlags: 0
@@ -2466,7 +2489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.474449
+      value: 19.269999
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2527,7 +2550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.48445
+      value: 21.279999
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6455,7 +6478,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.13725491}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9306,7 +9329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1502167086
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9348,7 +9371,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Evite le chocolat et les fourchettes\nAppuie sur l'\xE9cran pour sauter"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7f6a738cfa8347f47bb4be5d30e15cb0, type: 2}
   m_sharedMaterial: {fileID: -8981680998356115575, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9418,7 +9441,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1502167088}
   m_maskType: 0
 --- !u!23 &1502167088
@@ -10702,7 +10725,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "marche sur les morceaux de gel\xE9e pour rebombir"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7f6a738cfa8347f47bb4be5d30e15cb0, type: 2}
   m_sharedMaterial: {fileID: -8981680998356115575, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10772,7 +10795,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1693310008}
   m_maskType: 0
 --- !u!23 &1693310008
@@ -12776,7 +12799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8850230643897231255, guid: d2d17135176e3fd4b9718c97f36e23ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.05445
+      value: 27.71
       objectReference: {fileID: 0}
     - target: {fileID: 8850230643897231255, guid: d2d17135176e3fd4b9718c97f36e23ba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14043,7 +14066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.714451
+      value: 17.51
       objectReference: {fileID: 0}
     - target: {fileID: 6469011848547830477, guid: 7f5af260cc208ab4fa21e531e007c4fe, type: 3}
       propertyPath: m_LocalPosition.y
