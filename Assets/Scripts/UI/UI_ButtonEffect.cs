@@ -4,6 +4,8 @@ using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class UI_ButtonEffect : MonoBehaviour
 {
     [SerializeField] private GameObject HighScorePanel;
@@ -13,10 +15,31 @@ public class UI_ButtonEffect : MonoBehaviour
     [SerializeField] private AudioType _lock;
     [SerializeField] private Animator _Lock1animator;
     [SerializeField] private Animator _Lock2animator;
+    [SerializeField] private Button RNJ;
+    [SerializeField] private Button SG;
     [SerializeField] private Animator uiPresentationAnimator;
     
     public event Action Tutorial;
 
+
+    private void Start()
+    {
+        if (UI_Panel.AlreadyPlayed)
+        {
+            RNJ.onClick.RemoveListener(Lock1);
+            RNJ.onClick.RemoveListener(LockButton);
+            RNJ.onClick.AddListener(ButtonSound);
+            RNJ.onClick.AddListener(OpenRunNJump);
+        }
+
+        if (UI_Panel.AlreadyPlayed && GameScript.AlreadyPlayed)
+        {
+            SG.onClick.RemoveListener(Lock2);
+            SG.onClick.RemoveListener(LockButton);
+            SG.onClick.AddListener(ButtonSound);
+            SG.onClick.AddListener(OpenSuikaGame);
+        }
+    }
     public void ActiveHighScorePanel()
     {
         HighScorePanel.SetActive(true);
@@ -40,6 +63,24 @@ public class UI_ButtonEffect : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void OpenRunNJump()
+    {
+        if (UI_Panel.AlreadyPlayed)
+        {
+            _audioSource.Stop();
+            SceneManager.LoadScene(2);
+        }
+    }
+
+    public void OpenSuikaGame()
+    {
+        if (GameScript.AlreadyPlayed && UI_Panel.AlreadyPlayed)
+        {
+            _audioSource.Stop();
+            SceneManager.LoadScene(3);
+        }
+    }
+
     public void OpenMainMenu()
     {
         SceneManager.LoadScene(0);
@@ -57,6 +98,7 @@ public class UI_ButtonEffect : MonoBehaviour
 
     public void Lock1()
     {
+
         _Lock1animator.SetTrigger("ButtonPressed");
     }
 

@@ -6478,7 +6478,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.13725491}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10405,7 +10405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1646926988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10422,6 +10422,7 @@ MonoBehaviour:
   _maxSpawnInterval: 10
   _minSpawnInterval: 4
   shield: {fileID: 2065984009}
+  barrierSpawner: {fileID: 1454788235}
 --- !u!4 &1646926989
 Transform:
   m_ObjectHideFlags: 0
@@ -10723,7 +10724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "marche sur les morceaux de gel\xE9e pour rebombir"
+  m_text: "Marche sur les morceaux de gel\xE9e pour rebomdir"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f6a738cfa8347f47bb4be5d30e15cb0, type: 2}
   m_sharedMaterial: {fileID: -8981680998356115575, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}
