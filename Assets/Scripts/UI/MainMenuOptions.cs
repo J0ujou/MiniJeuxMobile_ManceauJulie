@@ -9,7 +9,7 @@ public class MainMenuOptions : MonoBehaviour
     }
     public void suppr()
     {
-        if (UI_Panel.AlreadyPlayed)
+        if (UI_Panel.AlreadyPlayed || GameScript.AlreadyPlayed)
         {
             this.gameObject.SetActive(false);
         }

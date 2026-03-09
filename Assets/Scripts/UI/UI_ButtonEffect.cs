@@ -70,7 +70,7 @@ public class UI_ButtonEffect : MonoBehaviour
 
     IEnumerator TapWait()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(1.5f);
         Time.timeScale = 1;
     }
 }

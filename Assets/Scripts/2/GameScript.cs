@@ -18,7 +18,14 @@ public class GameScript : MonoBehaviour
    [SerializeField] public Animator uiLevelUpAnimator;
    [SerializeField] public Animator uiFireWorkAnimator;
    
-   private static bool AlreadyPlayed = false;
+   [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+   [SerializeField] private AudioType _death;
+   [SerializeField] private AudioType _levelup;
+   
+   [SerializeField] private AudioSource _audioSource;
+   [SerializeField] private AudioClip _newReccordClip;
+   
+   public static bool AlreadyPlayed = false;
    [SerializeField] private GameObject[] TutoElements;
    
    
@@ -88,6 +95,7 @@ public class GameScript : MonoBehaviour
         scoreDatas.BarrierSpeed += 2;
         uiLevelUpAnimator.SetTrigger("LevelUp");
         uiFireWorkAnimator.SetTrigger("LevelUp");
+        _audioEventDispatcher.Playaudio(_levelup);
     }
 
     private void UpdateScoreText()
@@ -97,15 +105,16 @@ public class GameScript : MonoBehaviour
 
     public void EndGame()
     {
+        _audioSource.Stop();
+        _audioSource.volume = 0.5f;
         AlreadyPlayed = true;
         Debug.Log("EndGame");
-        //_audioEventDispatcher.Playaudio(_death);
-        //SaveScore?.Invoke();
+        _audioEventDispatcher.Playaudio(_death);
         uiGameOverAnimator.SetTrigger("Loose");
             if (playerDatas.IsBestScore(gameName, playerScore))
             {
                 highscoreText.gameObject.SetActive(true);
-                //_audioSource.PlayOneShot(_newReccordClip);
+                _audioSource.PlayOneShot(_newReccordClip);
             }
             if (playerDatas.IsHighscore(gameName, playerScore))
             {

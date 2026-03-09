@@ -5,6 +5,7 @@ public class Shield : MonoBehaviour
 {
     public bool shielded = false;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Animator BubblePopFXAnimator;
 
     private void OnEnable()
     {
@@ -34,5 +35,6 @@ public class Shield : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         shielded = false;
+        BubblePopFXAnimator.SetTrigger("BrokenShield");
     }
 }

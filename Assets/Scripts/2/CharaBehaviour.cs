@@ -21,6 +21,14 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] private GameObject loosePanel;
     private int NbCollectible = 0;
     [SerializeField] private int NbForShield = 3;
+    
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _pickup;
+    [SerializeField] private AudioType _bubble;
+    [SerializeField] private AudioType _bubblePop;
+    [SerializeField] private AudioType _jump;
+    [SerializeField] private AudioType _gelly;
+    
 
     public static event Action Shieldcreation;
     public static event Action OnShieldDestroy;
@@ -67,6 +75,7 @@ public class CharaBehaviour : MonoBehaviour
                 OnShieldDestroy?.Invoke();
                 Destroy(collision.gameObject);
                 UpdateText();
+                _audioEventDispatcher.Playaudio(_bubblePop);
             }
             else
             {
@@ -88,10 +97,11 @@ public class CharaBehaviour : MonoBehaviour
             UpdateText();
             if (NbCollectible >= NbForShield)
             {
-
+                _audioEventDispatcher.Playaudio(_bubble);
                 NbCollectible = 0;
                 Shieldcreation?.Invoke();
             }
+            _audioEventDispatcher.Playaudio(_pickup);
         }
     }
 
@@ -102,6 +112,7 @@ public class CharaBehaviour : MonoBehaviour
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, _jumpHeight);
             JumpFXAnimator.SetTrigger("Jumped");
+            _audioEventDispatcher.Playaudio(_jump);
         }
     }
     
@@ -112,6 +123,7 @@ public class CharaBehaviour : MonoBehaviour
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, _jumpHeight);
             JumpFXAnimator.SetTrigger("Jumped");
+            _audioEventDispatcher.Playaudio(_jump);
         }
     }
 
@@ -122,6 +134,7 @@ public class CharaBehaviour : MonoBehaviour
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, 14f);
             JumpFXAnimator.SetTrigger("Jumped");
+            _audioEventDispatcher.Playaudio(_gelly);
         }
     }
     

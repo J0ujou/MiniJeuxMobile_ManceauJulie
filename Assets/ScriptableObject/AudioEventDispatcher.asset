@@ -31,5 +31,11 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 6875161c22c3548448551061f6b0a261, type: 3}
   - audioType: 9
     audioClip: {fileID: 8300000, guid: 68ed065ecb09ab84f9551f43bba443ff, type: 3}
-  - audioType: 10
-    audioClip: {fileID: 0}
+  - audioType: 11
+    audioClip: {fileID: 8300000, guid: 9f6e9344a759d2a43b207c53a49b7dcd, type: 3}
+  - audioType: 13
+    audioClip: {fileID: 8300000, guid: 6088b137619c5404ab2a576990dcdf51, type: 3}
+  - audioType: 12
+    audioClip: {fileID: 8300000, guid: 6f5c5756142f5894594c4865ea7861a9, type: 3}
+  - audioType: 14
+    audioClip: {fileID: 8300000, guid: c8db87702db3e5648955bdc9189cd675, type: 3}

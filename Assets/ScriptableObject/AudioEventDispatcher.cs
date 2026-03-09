@@ -15,6 +15,10 @@ public enum AudioType
     Button,
     Locked,
     Menu,
+    Jump,
+    Bubble,
+    BubblePop,
+    Gelly,
 }
 
 [Serializable]
