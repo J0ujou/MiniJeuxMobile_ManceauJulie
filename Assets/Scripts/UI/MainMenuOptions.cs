@@ -18,13 +18,14 @@ public class MainMenuOptions : MonoBehaviour
         if (UI_Panel.AlreadyPlayed)
         {
             _Lock1.SetActive(false);
-            //image.color(White);
+            image.color= Color.white;
 
         }
 
         if (UI_Panel.AlreadyPlayed && GameScript.AlreadyPlayed)
         {
             _Lock2.SetActive(false);
+            image2.color= Color.white;
 
         }
     }

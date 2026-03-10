@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -38,18 +39,22 @@ public class GameScript : MonoBehaviour
 
     private void Start()
     {
+        _audioSource.Play();
         if (AlreadyPlayed)
         {
             foreach (GameObject go in TutoElements)
             {
                 go.SetActive(false);
             }
+
+            StartCoroutine(WaitBeforePlay());
+
         }
         else
         {
-            Time.timeScale = 0;
             uiPresentationAnimator.SetTrigger("Spawned"); 
         }
+        Time.timeScale = 0;
         scoreDatas.BarrierSpeed = 5;
         ScorePerLevel = 0;
         playerScore = 0;
@@ -58,6 +63,12 @@ public class GameScript : MonoBehaviour
     private void Awake()
     {
         //playerDatas.LoadDatas();
+    }
+
+    IEnumerator WaitBeforePlay()
+    {
+        yield return new WaitForSecondsRealtime(1.3f);
+        Time.timeScale = 1;
     }
 
     private void Update()

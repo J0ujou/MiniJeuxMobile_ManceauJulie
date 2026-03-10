@@ -24,20 +24,23 @@ public class UI_ButtonEffect : MonoBehaviour
 
     private void Start()
     {
-        if (UI_Panel.AlreadyPlayed)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            RNJ.onClick.RemoveListener(Lock1);
-            RNJ.onClick.RemoveListener(LockButton);
-            RNJ.onClick.AddListener(ButtonSound);
-            RNJ.onClick.AddListener(OpenRunNJump);
-        }
+            if (UI_Panel.AlreadyPlayed)
+            {
+                RNJ.onClick.RemoveListener(Lock1);
+                RNJ.onClick.RemoveListener(LockButton);
+                RNJ.onClick.AddListener(ButtonSound);
+                RNJ.onClick.AddListener(OpenRunNJump);
+            }
 
-        if (UI_Panel.AlreadyPlayed && GameScript.AlreadyPlayed)
-        {
-            SG.onClick.RemoveListener(Lock2);
-            SG.onClick.RemoveListener(LockButton);
-            SG.onClick.AddListener(ButtonSound);
-            SG.onClick.AddListener(OpenSuikaGame);
+            if (UI_Panel.AlreadyPlayed && GameScript.AlreadyPlayed)
+            {
+                SG.onClick.RemoveListener(Lock2);
+                SG.onClick.RemoveListener(LockButton);
+                SG.onClick.AddListener(ButtonSound);
+                SG.onClick.AddListener(OpenSuikaGame);
+            }
         }
     }
     public void ActiveHighScorePanel()
