@@ -41,7 +41,6 @@ public class Sweets : MonoBehaviour
                 collision.gameObject.SetActive(false);
                 Destroy(collision.gameObject);
                 
-                Debug.Log("Sweet");
                 GameObject nextSweet = Instantiate(characterMovement.sweetsPrefabs[SweetIndex + 1].prefab); // a voir quand on fusionne deux pastèques pck la ca devient un malus
                 GainPoints?.Invoke(characterMovement.sweetsPrefabs[SweetIndex + 1].points);
                 nextSweet.transform.position = transform.position;
@@ -56,7 +55,7 @@ public class Sweets : MonoBehaviour
     {
         if (SweetIndex == 11)
         {
-            Debug.Log("Cleanup");
+
             Destroy(gameObject);
         }
     }

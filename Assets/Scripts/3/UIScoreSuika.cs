@@ -16,11 +16,12 @@ public class UIScoreSuika : MonoBehaviour
    [SerializeField] private TMP_Text highscoreText;
    [SerializeField] private TMP_Text FinalscoreText;
    [SerializeField] public Animator uiCandyRainGameOverAnimator;
+   [SerializeField] SliderController sliderController;
    private int currentScore = 0;
    private int PowerBar = 0;
    private int ScoreToActivatePower = 100;
 
-
+   public event Action SpawnFloor;
    public static event Action DeleteMalus;
    private void Start()
    {
@@ -46,12 +47,14 @@ public class UIScoreSuika : MonoBehaviour
       currentScore += value;
       PowerBar += value;
       scoreText.text = $"Score : {currentScore.ToString()}";
+      sliderController.UpdateProgress(PowerBar);
       PowerBarText.text = $"PowerBar : {PowerBar.ToString()}";
       // Affichage barre qui augmente
       if (PowerBar >= ScoreToActivatePower)
       {
          PowerBar = 0;
          DeleteMalus?.Invoke();
+         SpawnFloor?.Invoke();
       }
    }
 

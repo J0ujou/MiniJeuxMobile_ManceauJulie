@@ -19,7 +19,6 @@ public class TopLimit : MonoBehaviour
       if (sweetScript.hasBeenDropped)
       {
         SuikaGameOver = true;
-        Debug.Log("game over");
         Time.timeScale = 0;
         OnEndGame?.Invoke();
       }

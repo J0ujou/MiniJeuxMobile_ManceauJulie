@@ -3,23 +3,35 @@ using UnityEngine.UIElements;
 
 public class HouseGround : MonoBehaviour
 {
-    [SerializeField] FloorHeight _floorHeight;
+    private FloorHeight _floorHeight;
     [SerializeField] SpawnHouse _spawnHouse;
 
 
     private void Update()
     {
-        _floorHeight = _spawnHouse.lastSpawnedFloor.GetComponent<FloorHeight>();
-    }
+        if (_spawnHouse.lastSpawnedFloor == null)
+            return;
+        
+        FloorHeight newFloor = _spawnHouse.lastSpawnedFloor.GetComponent<FloorHeight>();
 
-    private void OnEnable()
-    {
-        _floorHeight.MooveGround += MooveGround;
+        // Se réabonner uniquement si le floor a changé
+        if (newFloor != _floorHeight)
+        {
+            if (_floorHeight != null)
+                _floorHeight.MooveGround -= MooveGround;
+
+            _floorHeight = newFloor;
+
+            if (_floorHeight != null)
+                _floorHeight.MooveGround += MooveGround;
+
+        }
     }
 
     private void OnDisable()
     {
-        _floorHeight.MooveGround -= MooveGround;
+        if (_floorHeight != null)
+        {_floorHeight.MooveGround -= MooveGround;}
     }
 
 

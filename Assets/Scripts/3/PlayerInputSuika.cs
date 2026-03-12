@@ -56,7 +56,6 @@ public class PlayerInputSuika : MonoBehaviour
       if (_tapTimer < _tapDuration)
       {
         OnDropSweet?.Invoke();
-        Debug.Log(_tapTimer);
       }
       _tapTimer = 0.0f;
     }
