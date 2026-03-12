@@ -17,6 +17,8 @@ public class CharacterMovement : MonoBehaviour
     
     [SerializeField] PlayerInputSuika playerInputSuika;
     
+    [SerializeField] Animator CharaAnimator;
+    
     private GameObject nextSweet;
     private int nextSweetIndex;
     private GameObject NextnextSweet;
@@ -70,6 +72,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Wait == true)
         {
+            CharaAnimator.SetTrigger("IsAim");
             Wait = false;
             GameObject newSweet = Instantiate(nextSweet);
             newSweet.transform.position = transform.position;

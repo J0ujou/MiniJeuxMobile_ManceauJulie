@@ -11,16 +11,6 @@ public class SliderController : MonoBehaviour
     {
         StartCoroutine(TransitionSlide(progress));
     }
-    
-    void Update()
-    {
-        //slider.value = Mathf.Lerp(slider.value, targetValue, 5f * Time.deltaTime);
-    }
-
-    private void TriggerFillAnimation()
-    {
-        //float targetFill
-    }
 
     private IEnumerator TransitionSlide(int targetFill)
     {
