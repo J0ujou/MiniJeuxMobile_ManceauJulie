@@ -4,6 +4,12 @@ using UnityEngine;
 public class TopLimit : MonoBehaviour
 {
   public event Action OnEndGame;
+  public bool SuikaGameOver =false;
+
+  private void Start()
+  {
+    SuikaGameOver = false;
+  }
   private void OnTriggerStay2D(Collider2D collision)
   {
     if (collision.gameObject.CompareTag("Sweet"))
@@ -12,6 +18,7 @@ public class TopLimit : MonoBehaviour
 
       if (sweetScript.hasBeenDropped)
       {
+        SuikaGameOver = true;
         Debug.Log("game over");
         Time.timeScale = 0;
         OnEndGame?.Invoke();
