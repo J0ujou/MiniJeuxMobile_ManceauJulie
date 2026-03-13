@@ -129,4 +129,20 @@ public class UI_ButtonEffect : MonoBehaviour
         }
         
     }
+    
+    IEnumerator TapWait2()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        if (UIScoreSuika.AlreadyPlayed)
+        {
+            Time.timeScale = 1;
+        }
+        Time.timeScale = 1;
+    }
+    
+    public void Play2()
+    {
+        uiPresentationAnimator.SetTrigger("PlayPressed");
+        StartCoroutine(TapWait2());
+    }
 }

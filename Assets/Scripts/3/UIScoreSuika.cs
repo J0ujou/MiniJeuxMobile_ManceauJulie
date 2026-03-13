@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,17 +16,43 @@ public class UIScoreSuika : MonoBehaviour
    [SerializeField] private GameObject highscorePanel;
    [SerializeField] private TMP_Text highscoreText;
    [SerializeField] private TMP_Text FinalscoreText;
-   [SerializeField] public Animator uiCandyRainGameOverAnimator;
+   [SerializeField] public Animator uiGameOverAnimator;
+   [SerializeField] public Animator uiPresentationAnimator;
    [SerializeField] SliderController sliderController;
    private int currentScore = 0;
    private int PowerBar = 0;
    private int ScoreToActivatePower = 100;
+   
+   public static bool AlreadyPlayed = false;
 
    public event Action SpawnFloor;
    public static event Action DeleteMalus;
    private void Start()
    {
+      uiPresentationAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+      //_audioSource.Play();
+      if (AlreadyPlayed)
+      {
+         //foreach (GameObject go in TutoElements)
+         //{
+            //go.SetActive(false);
+         //}
+
+         StartCoroutine(WaitBeforePlay());
+
+      }
+      else
+      {
+         uiPresentationAnimator.SetTrigger("Spawned"); 
+      }
+      Time.timeScale = 0;
       currentScore = 0;
+   }
+   
+   IEnumerator WaitBeforePlay()
+   {
+      yield return new WaitForSecondsRealtime(1.3f);
+      Time.timeScale = 1;
    }
 
    private void OnEnable()
@@ -67,8 +94,7 @@ public class UIScoreSuika : MonoBehaviour
    {
       Debug.Log("EndGame");
       //_audioEventDispatcher.Playaudio(_death);
-      //SaveScore?.Invoke();
-      uiCandyRainGameOverAnimator.SetTrigger("Loose");
+      uiGameOverAnimator.SetTrigger("Loose");
       if (playerDatas.IsBestScore(gameName, currentScore))
       {
          highscoreText.gameObject.SetActive(true);

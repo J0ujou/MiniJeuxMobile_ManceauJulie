@@ -7,11 +7,11 @@ using Random = UnityEngine.Random;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float minXposition = -2.6f;
-    [SerializeField] private float maxXposition = 2.6f;
+    [SerializeField] private float minXposition = -0.5f;
+    [SerializeField] private float maxXposition = 0.5f;
     
-    private float currentMinXposition = -2.6f;
-    private float currentMaxXposition = 2.6f;
+    private float currentMinXposition = -0.5f;
+    private float currentMaxXposition = 0.5f;
     
     [SerializeField] public SweetsList[] sweetsPrefabs;
     
@@ -34,6 +34,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Start()
     {
+        NextnextSweetIndex = Random.Range(0, 5);
+        NextnextSweet = sweetsPrefabs[NextnextSweetIndex].prefab;
         LoadNextSweet();
     }
 
@@ -111,33 +113,37 @@ public class CharacterMovement : MonoBehaviour
     private void LoadNextSweet()
     {
             //Next
+            int[] values = { 0, 1, 2, 3, 4, 11 };
             if (NextnextSweetIndex != null)
             {
-                int[] values = { 0, 1, 2, 3, 4, 11 };
-                nextSweetIndex = values[Random.Range(0, values.Length)];
-                nextSweet = sweetsPrefabs[nextSweetIndex].prefab;
-            
-                foreach (Transform child in transform)
-                {
-                    Destroy(child.gameObject);
-                }
-
-                GameObject nextSweetPreview = Instantiate(nextSweet, transform);
-                nextSweetPreview.GetComponent<Collider2D>().isTrigger = true;
-                nextSweetPreview.GetComponent<Rigidbody2D>().isKinematic = true;
-                nextSweetPreview.transform.localPosition = Vector3.zero;
+                nextSweet = NextnextSweet;
+                nextSweetIndex = NextnextSweetIndex;
+                
             }
             else
             {
-                 nextSweet = NextnextSweet;
+                
+                nextSweetIndex = values[Random.Range(0, values.Length)];
+                nextSweet = sweetsPrefabs[nextSweetIndex].prefab;
             }
             
             //NextNext
-            NextnextSweetIndex = Random.Range(0, 5);
+            NextnextSweetIndex = values[Random.Range(0, 6)];
             NextnextSweet = sweetsPrefabs[NextnextSweetIndex].prefab;
             
             Sprite NextnextSprite = NextnextSweet.GetComponent<SpriteRenderer>().sprite;
             OnNextnextSweetChanged?.Invoke(NextnextSprite);
+                            
+            
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            GameObject nextSweetPreview = Instantiate(nextSweet, transform);
+            nextSweetPreview.GetComponent<Collider2D>().isTrigger = true;
+            nextSweetPreview.GetComponent<Rigidbody2D>().isKinematic = true;
+            nextSweetPreview.transform.localPosition = Vector3.zero;
             
             //GameObject NextnextSweetPreview = Instantiate(NextnextSweet, transform);
             //NextnextSweetPreview.GetComponent<Collider2D>().isTrigger = true;

@@ -22,7 +22,8 @@ public class Sweets : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        hasBeenDropped = true;
+        if(collision.gameObject.CompareTag("Barrier"))
+        {hasBeenDropped = true;}
         
         if (collision.gameObject.CompareTag("Sweet"))
         {
