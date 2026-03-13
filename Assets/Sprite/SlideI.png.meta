@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Projet Supprimer un arri\xE8re-plan (8)_0"
+      name: Slide
       rect:
         serializedVersion: 2
         x: 84
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Projet Supprimer un arri\xE8re-plan (8)_0": 5223548363494877972
+      Slide: 5223548363494877972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

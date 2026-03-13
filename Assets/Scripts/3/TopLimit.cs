@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class TopLimit : MonoBehaviour
 {
+  public event Action SpawnLastFloor;
   public event Action OnEndGame;
   public bool SuikaGameOver =false;
 
@@ -18,10 +20,17 @@ public class TopLimit : MonoBehaviour
 
       if (sweetScript.hasBeenDropped)
       {
+        SpawnLastFloor?.Invoke();
         SuikaGameOver = true;
-        Time.timeScale = 0;
-        OnEndGame?.Invoke();
+        StartCoroutine(CooldownBeforeGameOver());
       }
     }
+  }
+
+  IEnumerator CooldownBeforeGameOver()
+  {
+    yield return new WaitForSeconds(1f);
+    Time.timeScale = 0;
+    OnEndGame?.Invoke();
   }
 }

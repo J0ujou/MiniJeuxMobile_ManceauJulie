@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b30aa2ad8601d044a44f3ffc2aabb31
+guid: 178c2839b19480e48acd7d8383bea255
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6335622136291783541
-    second: "Projet Supprimer un arri\xE8re-plan (7)_0"
+      213: 8828517233430100471
+    second: "Projet Supprimer un arri\xE8re-plan (9)_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlideI
+      name: Candy6
       rect:
         serializedVersion: 2
-        x: 75
-        y: 237
-        width: 458
-        height: 70
+        x: 82
+        y: 53
+        width: 429
+        height: 428
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 573f5c0f3c6ace750800000000000000
-      internalID: 6335622136291783541
+      spriteID: 7f9f308f5a1358a70800000000000000
+      internalID: 8828517233430100471
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8a3bb8c4db0c8174980a8bfd1aee7283
+    spriteID: f38036e80465d9a46a3350c332199e31
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SlideI: 6335622136291783541
+      Candy6: 8828517233430100471
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

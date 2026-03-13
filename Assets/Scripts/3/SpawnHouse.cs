@@ -14,11 +14,13 @@ public class SpawnHouse : MonoBehaviour
  private void OnEnable()
  {
   _scoreSuika.SpawnFloor += SpawnerHouse;
+  _topLimit.SpawnLastFloor += SpawnerHouse;
  }
 
  private void OnDisable()
  {
   _scoreSuika.SpawnFloor -= SpawnerHouse;
+  _topLimit.SpawnLastFloor -= SpawnerHouse;
  }
 
  private void Start()
@@ -28,6 +30,7 @@ public class SpawnHouse : MonoBehaviour
 
  public void SpawnerHouse()
  {
+  NbFloor++;
   Debug.Log("Spawn House");
   if (NbFloor > 1)
   {
@@ -39,12 +42,18 @@ public class SpawnHouse : MonoBehaviour
    lastSpawnedFloor = HousePrefabs[0];
    Instantiate( lastSpawnedFloor, transform.position, Quaternion.identity);
   }
-  NbFloor++;
  }
 
 
  private int randomFLoor()
  {
-   return Random.Range(1, HousePrefabs.Length);
+   return Random.Range(2, HousePrefabs.Length);
  }
+
+
+public void SpawnLastFloor()
+{
+ lastSpawnedFloor = HousePrefabs[1];
+ Instantiate( lastSpawnedFloor, transform.position, Quaternion.identity);
+}
 }

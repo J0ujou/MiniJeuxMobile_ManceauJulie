@@ -1662,7 +1662,7 @@ Transform:
   m_GameObject: {fileID: 506422518}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.25746, y: 4.21488, z: 0}
+  m_LocalPosition: {x: 8.11, y: 2.66, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1798,6 +1798,7 @@ MonoBehaviour:
   _topLimit: {fileID: 518876354}
   HousePrefabs:
   - {fileID: 2016721850606996085, guid: f1f3ddfa04ed5a44e9310f3b2ef45044, type: 3}
+  - {fileID: 824112172007242620, guid: 0d85c4c750762a54085012a01d3e0685, type: 3}
   - {fileID: 8651774130182008264, guid: 6c5bcc1ad8a1e59438b022566dbea245, type: 3}
   - {fileID: 824112172007242620, guid: efc79449749b0f34ba6a9c4fb9b6c96a, type: 3}
   _scoreSuika: {fileID: 1672189655}
@@ -4203,7 +4204,7 @@ GameObject:
   - component: {fileID: 1503159660}
   - component: {fileID: 1503159661}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CandyPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4225,7 +4226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -160, y: -205}
+  m_AnchoredPosition: {x: -333, y: -174}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1503159659

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 5b30aa2ad8601d044a44f3ffc2aabb31
+guid: df58c9337c91c0b40a5d75e990e41b90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6335622136291783541
-    second: "Projet Supprimer un arri\xE8re-plan (7)_0"
+      213: 553113471820430524
+    second: Candy4_0
+  - first:
+      213: 8445175535009710990
+    second: Candy4_1
+  - first:
+      213: -7069166657147544926
+    second: Candy4_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +132,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlideI
+      name: Candy4_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 237
-        width: 458
-        height: 70
+        x: 171
+        y: 285
+        width: 232
+        height: 221
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 573f5c0f3c6ace750800000000000000
-      internalID: 6335622136291783541
+      spriteID: cbcf658a5cd0da700800000000000000
+      internalID: 553113471820430524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Candy4_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 35
+        width: 240
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83c216976a433570800000000000000
+      internalID: 8445175535009710990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Candy4_2
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 40
+        width: 226
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa5fae116645ed90800000000000000
+      internalID: -7069166657147544926
       vertices: []
       indices: 
       edges: []
@@ -151,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8a3bb8c4db0c8174980a8bfd1aee7283
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SlideI: 6335622136291783541
+      Candy4_0: 553113471820430524
+      Candy4_1: 8445175535009710990
+      Candy4_2: -7069166657147544926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
