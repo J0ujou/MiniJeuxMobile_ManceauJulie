@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FloorHeight
   PoofAnimator: {fileID: 8176605818364843904}
+  _audioEventDispatcher: {fileID: 11400000, guid: ae8d4a8d2ac4c48418146a2c3629decb, type: 2}
+  _drop: 15
 --- !u!1001 &889690337013326142
 PrefabInstance:
   m_ObjectHideFlags: 0

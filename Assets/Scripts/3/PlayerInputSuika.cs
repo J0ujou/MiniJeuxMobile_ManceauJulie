@@ -12,6 +12,9 @@ public class PlayerInputSuika : MonoBehaviour
   private float width = 0.0f;
   private float height = 0.0f;
   
+  [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+  [SerializeField] private AudioType _drop;
+  
   private Vector2 startPosition;
   private Vector2 endPosition;
   
@@ -55,6 +58,7 @@ public class PlayerInputSuika : MonoBehaviour
       _isTouching = false;
       if (_tapTimer < _tapDuration)
       {
+        _audioEventDispatcher.Playaudio(_drop);
         OnDropSweet?.Invoke();
       }
       _tapTimer = 0.0f;

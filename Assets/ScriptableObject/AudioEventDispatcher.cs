@@ -19,6 +19,8 @@ public enum AudioType
     Bubble,
     BubblePop,
     Gelly,
+    House,
+    Fusion,
 }
 
 [Serializable]

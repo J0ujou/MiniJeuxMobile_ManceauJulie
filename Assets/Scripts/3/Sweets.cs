@@ -9,6 +9,9 @@ public class Sweets : MonoBehaviour
     public CharacterMovement characterMovement;
     public bool hasBeenDropped = false;
     [SerializeField] Animator FusionFXAnimator;
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _fusion;
+    [SerializeField] private AudioType _explosion;
 
     private SpriteRenderer sprite;
     private Collider2D coll;
@@ -63,7 +66,7 @@ public class Sweets : MonoBehaviour
                         .prefab); // a voir quand on fusionne deux pastèques pck la ca devient un malus
                 GainPoints?.Invoke(characterMovement.sweetsPrefabs[SweetIndex + 1].points);
                 nextSweet.transform.position = transform.position;
-                
+                _audioEventDispatcher.Playaudio(_fusion);
                 StartCoroutine(BeforeDestroy());
             }
         }
@@ -73,7 +76,7 @@ public class Sweets : MonoBehaviour
     {
         if (SweetIndex == 11)
         {
-
+            _audioEventDispatcher.Playaudio(_explosion);
             StartCoroutine(BeforeDestroy());
         }
     }
