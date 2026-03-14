@@ -29,10 +29,11 @@ Transform:
   m_GameObject: {fileID: 2281860178215531844}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.94, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0}
+  m_LocalPosition: {x: -1.5, y: -0.699, z: 0}
+  m_LocalScale: {x: 0.3382111, y: 0.3382111, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8729185346688401880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1772019285086319397
@@ -172,3 +173,75 @@ MonoBehaviour:
   SweetIndex: 5
   characterMovement: {fileID: 1641214152659918930, guid: c2aee212d89ab9345a7afb08f5b02083, type: 3}
   hasBeenDropped: 0
+  FusionFXAnimator: {fileID: 4548291302368428436}
+--- !u!1001 &1817303151566973172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5831626810410511494}
+    m_Modifications:
+    - target: {fileID: 3622076640835151858, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803455873436279491, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+      propertyPath: m_Name
+      value: FusionFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+--- !u!95 &4548291302368428436 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2749057525238442336, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+  m_PrefabInstance: {fileID: 1817303151566973172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8729185346688401880 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6925428214079727916, guid: bc28e8da98c2af348bbef5435d13cb2a, type: 3}
+  m_PrefabInstance: {fileID: 1817303151566973172}
+  m_PrefabAsset: {fileID: 0}
