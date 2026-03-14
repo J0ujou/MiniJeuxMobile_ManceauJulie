@@ -4,15 +4,18 @@ using UnityEngine;
 public class FloorHeight : MonoBehaviour
 {
     
-    private float MaxHeight = -3.9f;
+    private float MaxHeight = 0.5f;
     
     public event Action MooveGround;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (this.gameObject.transform.position.y > MaxHeight)
+        if (collision.gameObject.CompareTag("Barrier"))
         {
-            Debug.Log("KK");
-            MooveGround ?.Invoke();
+            if (this.gameObject.transform.position.y > MaxHeight)
+            {
+                MooveGround ?.Invoke();
+            }
+            
         }
     }
 }

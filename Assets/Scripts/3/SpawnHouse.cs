@@ -52,5 +52,6 @@ public class SpawnHouse : MonoBehaviour
 public void SpawnLastFloor()
 {
  lastSpawnedFloor = Instantiate(HousePrefabs[1], transform.position, Quaternion.identity);
+ _topLimit.NbFloorText(NbFloor);
 }
 }

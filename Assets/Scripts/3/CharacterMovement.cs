@@ -29,7 +29,7 @@ public class CharacterMovement : MonoBehaviour
     public static event Action<Sprite> OnNextnextSweetChanged;
     
 
-    [SerializeField] private float sideGapForBiggerSweet =0.07f;
+    [SerializeField] private float sideGapForBiggerSweet =0.1f;
     private float defaultYPosition = 3.78f;
 
     private void Start()

@@ -23,6 +23,16 @@ public class UIScoreSuika : MonoBehaviour
    private int PowerBar = 0;
    private int ScoreToActivatePower = 100;
    
+   [SerializeField] public Animator uiLevelUpAnimator;
+   [SerializeField] public Animator uiFireWorkAnimator;
+   
+   [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+   [SerializeField] private AudioType _death;
+   [SerializeField] private AudioType _levelup;
+   
+   [SerializeField] private AudioSource _audioSource;
+   [SerializeField] private AudioClip _newReccordClip;
+   
    public static bool AlreadyPlayed = false;
 
    public event Action SpawnFloor;
@@ -30,7 +40,8 @@ public class UIScoreSuika : MonoBehaviour
    private void Start()
    {
       uiPresentationAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
-      //_audioSource.Play();
+      uiGameOverAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+      _audioSource.Play();
       if (AlreadyPlayed)
       {
          //foreach (GameObject go in TutoElements)
@@ -82,6 +93,9 @@ public class UIScoreSuika : MonoBehaviour
          PowerBar = 0;
          DeleteMalus?.Invoke();
          SpawnFloor?.Invoke();
+         uiLevelUpAnimator.SetTrigger("LevelUp");
+         uiFireWorkAnimator.SetTrigger("LevelUp");
+         _audioEventDispatcher.Playaudio(_levelup);
       }
    }
 
@@ -92,19 +106,20 @@ public class UIScoreSuika : MonoBehaviour
    
    public void EndGame()
    {
-      Debug.Log("EndGame");
-      //_audioEventDispatcher.Playaudio(_death);
+      _audioSource.Stop();
+      _audioSource.volume = 0.5f;
+      AlreadyPlayed = true;
+      _audioEventDispatcher.Playaudio(_death);
       uiGameOverAnimator.SetTrigger("Loose");
       if (playerDatas.IsBestScore(gameName, currentScore))
       {
          highscoreText.gameObject.SetActive(true);
-         //_audioSource.PlayOneShot(_newReccordClip);
+         _audioSource.PlayOneShot(_newReccordClip);
       }
       if (playerDatas.IsHighscore(gameName, currentScore))
       {
          playerDatas.AddHighscore(gameName, playerDatas.Name, currentScore);
       }
       FinalscoreText.text = $"Score: {currentScore.ToString()}";
-      highscorePanel.SetActive(true);
    }
 }

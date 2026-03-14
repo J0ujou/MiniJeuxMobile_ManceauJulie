@@ -119,7 +119,6 @@ public class GameScript : MonoBehaviour
         _audioSource.Stop();
         _audioSource.volume = 0.5f;
         AlreadyPlayed = true;
-        Debug.Log("EndGame");
         _audioEventDispatcher.Playaudio(_death);
         uiGameOverAnimator.SetTrigger("Loose");
             if (playerDatas.IsBestScore(gameName, playerScore))

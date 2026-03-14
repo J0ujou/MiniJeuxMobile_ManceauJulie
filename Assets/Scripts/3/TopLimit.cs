@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class TopLimit : MonoBehaviour
@@ -8,6 +9,7 @@ public class TopLimit : MonoBehaviour
   public event Action OnEndGame;
   public bool SuikaGameOver =false;
   [SerializeField] GameObject GameOverPanel;
+  [SerializeField] TMP_Text FloorText;
 
   private void Start()
   {
@@ -38,4 +40,9 @@ public class TopLimit : MonoBehaviour
     Time.timeScale = 0;
     OnEndGame?.Invoke();
   }
-}
+
+  public void NbFloorText(int nb)
+  {
+    FloorText.text = $"Etages: {nb.ToString()}";
+  }
+} 

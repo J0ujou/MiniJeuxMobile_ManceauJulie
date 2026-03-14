@@ -33,7 +33,7 @@ public class PlayerInputSuika : MonoBehaviour
   
   private void Update()
   {
-    if (Touch.activeTouches.Count <= 0)
+    if (Touch.activeTouches.Count <= 0 || Time.timeScale == 0f)
     {
       return;
     }

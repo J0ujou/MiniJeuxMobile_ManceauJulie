@@ -22,11 +22,14 @@ public class Sweets : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Barrier"))
-        {hasBeenDropped = true;}
-        
+        if (collision.gameObject.CompareTag("Barrier"))
+        {
+            hasBeenDropped = true;
+        }
+
         if (collision.gameObject.CompareTag("Sweet"))
         {
+            hasBeenDropped = true;
             Sweets collidedSweet =  collision.gameObject.GetComponent<Sweets>();
             
             if (collidedSweet.SweetIndex == SweetIndex)
