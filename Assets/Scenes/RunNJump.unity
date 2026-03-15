@@ -590,14 +590,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutorialScript
   uiButtonEffect: {fileID: 2090527320}
   Textzone: {fileID: 335776951}
-  BarrierText: {fileID: 0}
-  ShieldText: {fileID: 0}
-  GellyText: {fileID: 0}
+  Textzone2: {fileID: 0}
   TutoTexts:
   - {fileID: 1502167085}
   - {fileID: 203846649}
   - {fileID: 1693310005}
   ArrowAnimator: {fileID: 691565583}
+  ArrowAnimator2: []
+  playerInputSuika: {fileID: 0}
 --- !u!1 &79451536
 GameObject:
   m_ObjectHideFlags: 0
@@ -13839,6 +13839,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 71498230}
     m_Modifications:
+    - target: {fileID: 1188735660867589032, guid: 6a281e6ec695d6a49908c056e714daaa, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6953532040492305915, guid: 6a281e6ec695d6a49908c056e714daaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.9

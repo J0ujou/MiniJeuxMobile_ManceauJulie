@@ -18,9 +18,12 @@ public class PlayerInputSuika : MonoBehaviour
   private Vector2 startPosition;
   private Vector2 endPosition;
   
+ private bool[] tutoOk = new bool[2];
+  
   public event Action OnMoveLeft;
   public event Action OnMoveRight;
   public event Action OnDropSweet;
+  public event Action Tutorial;
   private void Start()
   {
     width = Screen.width;
@@ -51,6 +54,15 @@ public class PlayerInputSuika : MonoBehaviour
     {
       endPosition = touch.screenPosition;
       OnSwipe();
+      if (!UIScoreSuika.AlreadyPlayed)
+      {
+        tutoOk[0] = true;
+        if (tutoOk[0] == true && tutoOk[1] == true)
+        {
+          Tutorial?.Invoke();
+          UIScoreSuika.AlreadyPlayed = true;
+        }
+      }
     }
     else if (touch.phase == TouchPhase.Ended)
     {
@@ -60,6 +72,15 @@ public class PlayerInputSuika : MonoBehaviour
       {
         _audioEventDispatcher.Playaudio(_drop);
         OnDropSweet?.Invoke();
+        if (!UIScoreSuika.AlreadyPlayed)
+        {
+          tutoOk[1] = true;
+          if (tutoOk[0] == true && tutoOk[1] == true)
+          {
+            Tutorial?.Invoke();
+            UIScoreSuika.AlreadyPlayed = true;
+          }
+        }
       }
       _tapTimer = 0.0f;
     }

@@ -49,7 +49,7 @@ public class UIScoreSuika : MonoBehaviour
             //go.SetActive(false);
          //}
 
-         StartCoroutine(WaitBeforePlay());
+         //StartCoroutine(WaitBeforePlay());
 
       }
       else
