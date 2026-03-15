@@ -7,11 +7,11 @@ using Random = UnityEngine.Random;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float minXposition = -0.5f;
-    [SerializeField] private float maxXposition = 0.5f;
+    [SerializeField] private float minXposition = -2.6f;
+    [SerializeField] private float maxXposition = 2.6f;
     
-    private float currentMinXposition = -0.5f;
-    private float currentMaxXposition = 0.5f;
+    private float currentMinXposition = -2.6f;
+    private float currentMaxXposition = 2.6f;
     
     [SerializeField] public SweetsList[] sweetsPrefabs;
     
@@ -29,7 +29,7 @@ public class CharacterMovement : MonoBehaviour
     public static event Action<Sprite> OnNextnextSweetChanged;
     
 
-    [SerializeField] private float sideGapForBiggerSweet =0.15f;
+    [SerializeField] private float sideGapForBiggerSweet =0.08f;
     private float defaultYPosition = 3.78f;
 
     private void Start()
@@ -156,8 +156,16 @@ public class CharacterMovement : MonoBehaviour
     
     private void CalculateCharaBounds()
     { 
-        currentMinXposition = minXposition + (nextSweetIndex* sideGapForBiggerSweet);
-        currentMaxXposition = maxXposition - (nextSweetIndex * sideGapForBiggerSweet);
+        if(nextSweetIndex == 11)
+        {
+            currentMinXposition = minXposition + (3* sideGapForBiggerSweet);
+            currentMaxXposition = maxXposition - (3 * sideGapForBiggerSweet);
+        }
+        else
+        {
+            currentMinXposition = minXposition + (nextSweetIndex * sideGapForBiggerSweet);
+            currentMaxXposition = maxXposition - (nextSweetIndex * sideGapForBiggerSweet);
+        }
 
         if (transform.position.x < currentMinXposition)
         {

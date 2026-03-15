@@ -92,7 +92,7 @@ public class PlayerInputSuika : MonoBehaviour
   }
 
   
-  private float minSwipeDistance = 5f;
+  private float minSwipeDistance = 3f;
   public void OnSwipe()
   {
     Vector2 delta = endPosition - startPosition;

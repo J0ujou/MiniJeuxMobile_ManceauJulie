@@ -9,6 +9,7 @@ using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 public class PlayerInput : MonoBehaviour
 {
   [SerializeField] private float _tapDuration = 1.0f;
+  [SerializeField] GameScript gameScript;
   private float _tapTimer = 0.0f;
   private bool _isTouching = false;
   private float width = 0.0f;
@@ -41,20 +42,30 @@ public class PlayerInput : MonoBehaviour
 
     if (Input.touchCount > 0)
     {
-      UnityEngine.Touch firstTouch = Input.GetTouch(0);
+      //UnityEngine.Touch firstTouch = Input.GetTouch(0);
 
-      if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Began)
+      //if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Began)
+      //{
+      foreach (var touch in Touch.activeTouches)
       {
-        _isTouching = true;
-        if (_tapTimer <= _tapDuration)
+        if (touch.phase == TouchPhase.Began)
         {
-          jump?.Invoke();
+          _isTouching = true;
+          if (_tapTimer <= _tapDuration)
+          {
+            if(!gameScript.notready)
+            {
+              jump?.Invoke();
+              break;
+            }
+          }
         }
-      }
-      else if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Ended)
-      {
-        _isTouching = false;
+        //else if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Ended)
+        else if (touch.phase == TouchPhase.Ended)
+        {
+          _isTouching = false;
 
+        }
       }
     }
   }

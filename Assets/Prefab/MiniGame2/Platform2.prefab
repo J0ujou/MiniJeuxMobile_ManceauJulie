@@ -77,7 +77,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BarrierBehaviour
   _barrierMovementSpeed: 5
   _screenExit: -10
-  _barrierRigidbody: {fileID: 0}
   scoreDatas: {fileID: 11400000, guid: 0c384c72442791947a00a005f8e77df9, type: 2}
 --- !u!1 &3734921710822365950
 GameObject:
@@ -158,7 +157,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1668507905
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1383253164475285040, guid: 237b60567dc4a384b8cb47cdda919ba4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -249,7 +248,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1668507905
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3672634396371836590, guid: 7b287484117ad4340add97b97293cd68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -341,7 +340,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1668507905
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4756061943769621559, guid: 510ca1446c2537e48841647d1318f4bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

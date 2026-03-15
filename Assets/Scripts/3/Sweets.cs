@@ -8,6 +8,7 @@ public class Sweets : MonoBehaviour
     public int SweetIndex;
     public CharacterMovement characterMovement;
     public bool hasBeenDropped = false;
+    public bool explose = false;
     [SerializeField] Animator FusionFXAnimator;
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
     [SerializeField] private AudioType _fusion;
@@ -84,6 +85,7 @@ public class Sweets : MonoBehaviour
 
     IEnumerator BeforeDestroy()
     {
+        explose = true;
         FusionFXAnimator.SetTrigger("Fusion");
         sprite.enabled = false;
         //coll.isTrigger = true;

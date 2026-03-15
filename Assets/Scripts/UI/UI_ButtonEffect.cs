@@ -18,6 +18,7 @@ public class UI_ButtonEffect : MonoBehaviour
     [SerializeField] private Button RNJ;
     [SerializeField] private Button SG;
     [SerializeField] private Animator uiPresentationAnimator;
+    [SerializeField] GameScript gameScript;
     
     public event Action Tutorial;
 
@@ -28,18 +29,23 @@ public class UI_ButtonEffect : MonoBehaviour
         {
             if (UI_Panel.AlreadyPlayed)
             {
-                RNJ.onClick.RemoveListener(Lock1);
-                RNJ.onClick.RemoveListener(LockButton);
+                RNJ.onClick.RemoveAllListeners();
                 RNJ.onClick.AddListener(ButtonSound);
                 RNJ.onClick.AddListener(OpenRunNJump);
             }
 
             if (UI_Panel.AlreadyPlayed && GameScript.AlreadyPlayed)
             {
-                SG.onClick.RemoveListener(Lock2);
-                SG.onClick.RemoveListener(LockButton);
+                SG.onClick.RemoveAllListeners();
                 SG.onClick.AddListener(ButtonSound);
                 SG.onClick.AddListener(OpenSuikaGame);
+            }
+            else
+            {
+                RNJ.onClick.AddListener(Lock1);
+                RNJ.onClick.AddListener(LockButton);
+                SG.onClick.AddListener(Lock2);
+                SG.onClick.AddListener(LockButton);
             }
         }
     }
@@ -127,7 +133,9 @@ public class UI_ButtonEffect : MonoBehaviour
         {
             Tutorial?.Invoke();
         }
-        
+
+        gameScript.notready = false;
+
     }
     
     IEnumerator TapWait2()

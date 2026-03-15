@@ -28,6 +28,7 @@ public class GameScript : MonoBehaviour
    
    public static bool AlreadyPlayed = false;
    [SerializeField] private GameObject[] TutoElements;
+   public bool notready = false;
    
    
    //[SerializeField] public BarrierBehaviour[] barrierBehaviour;
@@ -42,6 +43,7 @@ public class GameScript : MonoBehaviour
         _audioSource.Play();
         if (AlreadyPlayed)
         {
+            notready = false;
             foreach (GameObject go in TutoElements)
             {
                 go.SetActive(false);
@@ -52,6 +54,7 @@ public class GameScript : MonoBehaviour
         }
         else
         {
+            notready = true;
             uiPresentationAnimator.SetTrigger("Spawned"); 
         }
         Time.timeScale = 0;

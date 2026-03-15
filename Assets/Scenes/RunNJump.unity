@@ -525,7 +525,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1668507905
   m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: b6f9c420cb62a474ea3e508a27b4df70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2185,6 +2185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   _tapDuration: 1
+  gameScript: {fileID: 615067015}
 --- !u!1 &344366425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,6 +4161,7 @@ MonoBehaviour:
   - {fileID: 839011590}
   - {fileID: 1152550318}
   - {fileID: 974140640}
+  notready: 0
   ScoreToLevelUp: 20
 --- !u!82 &615067016
 AudioSource:
@@ -4174,7 +4176,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 556726534c7cc404e867aa70a2de4b00, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6812,7 +6814,7 @@ GameObject:
   - component: {fileID: 1069372648}
   - component: {fileID: 1069372647}
   m_Layer: 5
-  m_Name: Title
+  m_Name: CHOCO RUN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6857,7 +6859,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RUN AND JUMP
+  m_text: CHOCO RUN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6390b443ec9e3b4fb13743e1e4b0044, type: 2}
   m_sharedMaterial: {fileID: 7283389226593961708, guid: a6390b443ec9e3b4fb13743e1e4b0044, type: 2}
@@ -7732,7 +7734,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8641,8 +8643,8 @@ MonoBehaviour:
   - {fileID: 609608955956372793, guid: f2026cb598f04df4a8e3ffcc202f2c5f, type: 3}
   _gellySpawner: {fileID: 20559868}
   _collectibleSpawner: {fileID: 1646926988}
-  _maxSpawnInterval: 3
-  _minSpawnInterval: 1
+  _maxSpawnInterval: 2
+  _minSpawnInterval: 0.7
 --- !u!1 &1461448906
 GameObject:
   m_ObjectHideFlags: 0
@@ -13007,6 +13009,7 @@ MonoBehaviour:
   RNJ: {fileID: 0}
   SG: {fileID: 0}
   uiPresentationAnimator: {fileID: 219767490}
+  gameScript: {fileID: 615067015}
 --- !u!1 &2114415474
 GameObject:
   m_ObjectHideFlags: 0

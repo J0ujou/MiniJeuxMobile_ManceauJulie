@@ -23,8 +23,11 @@ public class TopLimit : MonoBehaviour
     if (collision.gameObject.CompareTag("Sweet"))
     {
       Sweets sweetScript = collision.gameObject.GetComponent<Sweets>();
-
-      if (sweetScript.hasBeenDropped)
+      Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+      
+      if (rb != null && rb.isKinematic) return;
+        
+      if (sweetScript.hasBeenDropped && !sweetScript.explose)
       {
         SuikaGameOver = true;
         StartCoroutine(CooldownBeforeGameOver());

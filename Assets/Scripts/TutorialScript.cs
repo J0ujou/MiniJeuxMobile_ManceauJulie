@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialScript : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class TutorialScript : MonoBehaviour
     private void Start()
     {
         tutoIndex = 0;
-        if (!UIScoreSuika.AlreadyPlayed)
+        if (!UIScoreSuika.AlreadyPlayed && SceneManager.GetActiveScene().buildIndex == 3)
         {
             ArrowAnimator2[0].SetBool("Tuto4", true);
             ArrowAnimator2[1].SetBool("Tuto5", true);
@@ -28,13 +29,19 @@ public class TutorialScript : MonoBehaviour
     private void OnEnable()
     {
         uiButtonEffect.Tutorial += StartTutorial;
-        playerInputSuika.Tutorial += StartTutorialSuika;
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            playerInputSuika.Tutorial += StartTutorialSuika;
+        }
     }
 
     private void OnDisable()
     {
         uiButtonEffect.Tutorial -= StartTutorial;
-        playerInputSuika.Tutorial -= StartTutorialSuika;
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            playerInputSuika.Tutorial -= StartTutorialSuika;
+        }
     }
 
     IEnumerator TutoSuika()
