@@ -44,13 +44,7 @@ public class UIScoreSuika : MonoBehaviour
       _audioSource.Play();
       if (AlreadyPlayed)
       {
-         //foreach (GameObject go in TutoElements)
-         //{
-            //go.SetActive(false);
-         //}
-
-         //StartCoroutine(WaitBeforePlay());
-
+         StartCoroutine(WaitBeforePlay());
       }
       else
       {
@@ -91,6 +85,7 @@ public class UIScoreSuika : MonoBehaviour
       if (PowerBar >= ScoreToActivatePower)
       {
          PowerBar = 0;
+         sliderController.UpdateProgress(PowerBar);
          DeleteMalus?.Invoke();
          SpawnFloor?.Invoke();
          uiLevelUpAnimator.SetTrigger("LevelUp");

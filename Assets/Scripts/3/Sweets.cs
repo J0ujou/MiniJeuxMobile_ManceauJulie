@@ -87,7 +87,7 @@ public class Sweets : MonoBehaviour
         FusionFXAnimator.SetTrigger("Fusion");
         sprite.enabled = false;
         //coll.isTrigger = true;
-        //rb.isKinematic = true;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);

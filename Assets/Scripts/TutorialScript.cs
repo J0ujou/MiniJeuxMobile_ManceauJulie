@@ -41,7 +41,7 @@ public class TutorialScript : MonoBehaviour
     {
         yield return StartCoroutine(WaitTutorial2());
         tutoIndex++;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         ArrowAnimator2[0].SetBool("Tuto4", false);
         ArrowAnimator2[1].SetBool("Tuto5", false);
         TutoTexts[tutoIndex -1 ].SetActive(false);

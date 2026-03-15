@@ -28,10 +28,11 @@ public class MainMenuOptions : MonoBehaviour
             image2.color= Color.white;
 
         }
+        
     }
     public void suppr()
     {
-        if (UI_Panel.AlreadyPlayed || GameScript.AlreadyPlayed)
+        if (UI_Panel.AlreadyPlayed || GameScript.AlreadyPlayed || UIScoreSuika.AlreadyPlayed)
         {
             this.gameObject.SetActive(false);
         }

@@ -36,7 +36,7 @@ public class TopLimit : MonoBehaviour
   IEnumerator CooldownBeforeGameOver()
   {
     SpawnLastFloor?.Invoke();
-    yield return new WaitForSeconds(1f);
+    yield return new WaitForSeconds(1.5f);
     Time.timeScale = 0;
     OnEndGame?.Invoke();
   }

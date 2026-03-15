@@ -17,10 +17,10 @@ public class SliderController : MonoBehaviour
         float originalFill = slider.value;
         float elapsedTime = 0.0f;
 
-        while (elapsedTime < 0.25f)
+        while (elapsedTime < 0.5f)
         {
             elapsedTime += Time.deltaTime;
-            float time = elapsedTime / 0.25f;
+            float time = elapsedTime / 0.5f;
             slider.value = Mathf.Lerp(originalFill, targetFill, time);
             
             yield return null;
