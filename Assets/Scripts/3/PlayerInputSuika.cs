@@ -11,6 +11,8 @@ public class PlayerInputSuika : MonoBehaviour
   private bool _isTouching = false;
   private float width = 0.0f;
   private float height = 0.0f;
+
+  public bool notready = false;
   
   [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
   [SerializeField] private AudioType _drop;

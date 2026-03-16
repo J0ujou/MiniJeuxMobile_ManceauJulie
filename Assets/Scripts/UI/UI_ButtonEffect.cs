@@ -27,7 +27,6 @@ public class UI_ButtonEffect : MonoBehaviour
 
     private void Start()
     {
-        PausePanel.SetActive(false);
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             if (UI_Panel.AlreadyPlayed)
@@ -50,6 +49,10 @@ public class UI_ButtonEffect : MonoBehaviour
                 SG.onClick.AddListener(Lock2);
                 SG.onClick.AddListener(LockButton);
             }
+        }
+        else
+        {
+            PausePanel.SetActive(false);
         }
     }
     public void ActiveHighScorePanel()
