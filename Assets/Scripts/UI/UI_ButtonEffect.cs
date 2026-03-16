@@ -19,12 +19,15 @@ public class UI_ButtonEffect : MonoBehaviour
     [SerializeField] private Button SG;
     [SerializeField] private Animator uiPresentationAnimator;
     [SerializeField] GameScript gameScript;
+
+    [SerializeField] private GameObject PausePanel;
     
     public event Action Tutorial;
 
 
     private void Start()
     {
+        PausePanel.SetActive(false);
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             if (UI_Panel.AlreadyPlayed)
@@ -148,5 +151,25 @@ public class UI_ButtonEffect : MonoBehaviour
     {
         uiPresentationAnimator.SetTrigger("PlayPressed");
         StartCoroutine(TapWait2());
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        PausePanel.SetActive(true);
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            gameScript.notready = true;
+        }
+    }
+
+    public void StopPause()
+    {
+        PausePanel.SetActive(false);
+        Time.timeScale = 1;
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            gameScript.notready = false;
+        }
     }
 }

@@ -103,7 +103,7 @@ public class PlayerInputSuika : MonoBehaviour
     delta = delta.normalized;
     float dot = Vector2.Dot(delta, Vector2.right);
 
-    if (Mathf.Abs(dot) > 0.5f)
+    if (Mathf.Abs(dot) > 0.7f)
     {
       if (dot < 0.0f)
       {
