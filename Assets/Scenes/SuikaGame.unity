@@ -11505,6 +11505,7 @@ MonoBehaviour:
   SG: {fileID: 0}
   uiPresentationAnimator: {fileID: 1683311135}
   gameScript: {fileID: 0}
+  playerInputSuika: {fileID: 4529035656280785104}
   PausePanel: {fileID: 1103813061}
 --- !u!1 &1995177620
 GameObject:

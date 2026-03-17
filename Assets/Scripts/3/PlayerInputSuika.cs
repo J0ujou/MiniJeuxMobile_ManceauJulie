@@ -73,7 +73,8 @@ public class PlayerInputSuika : MonoBehaviour
       if (_tapTimer < _tapDuration)
       {
         _audioEventDispatcher.Playaudio(_drop);
-        OnDropSweet?.Invoke();
+        if(!notready)
+        {OnDropSweet?.Invoke();}
         if (!UIScoreSuika.AlreadyPlayed)
         {
           tutoOk[1] = true;
