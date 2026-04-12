@@ -44,7 +44,7 @@ public class TutorialScript : MonoBehaviour
         }
     }
 
-    IEnumerator TutoSuika()
+    /*IEnumerator TutoSuika()
     {
         yield return StartCoroutine(WaitTutorial2());
         tutoIndex++;
@@ -92,6 +92,53 @@ public class TutorialScript : MonoBehaviour
         TutoTexts[tutoIndex].SetActive(false);
         Textzone2.SetActive(false);
         Time.timeScale = 1;
+    }*/
+    
+    IEnumerator Step(
+        int arrowIndexToEnable = -1,
+        string boolName = "",
+        int arrowIndexToDisable = -1,
+        string boolDisableName = "",
+        bool textZone1 = true,
+        bool textZone2 = false)
+    {
+        tutoIndex++;
+
+        // Texte
+        TutoTexts[tutoIndex - 1].SetActive(false);
+        TutoTexts[tutoIndex].SetActive(true);
+
+        // Flèches ON
+        if (arrowIndexToEnable != -1)
+            ArrowAnimator2[arrowIndexToEnable].SetBool(boolName, true);
+
+        // Flèches OFF
+        if (arrowIndexToDisable != -1)
+            ArrowAnimator2[arrowIndexToDisable].SetBool(boolDisableName, false);
+
+        // Zones texte
+        Textzone.SetActive(textZone1);
+        Textzone2.SetActive(textZone2);
+        
+        yield return StartCoroutine(WaitTutorial2());
+    }
+    
+    IEnumerator TutoSuika()
+    {
+        ArrowAnimator2[1].SetBool("Tuto5", false);
+        yield return Step(2, "Tuto2", 0, "Tuto4");
+        yield return Step();
+        yield return Step(4, "Tuto6", 2, "Tuto2", false, true);
+        yield return Step(3, "Tuto3", 4, "Tuto6", true, false);
+        yield return Step(4, "Tuto6", 3, "Tuto3", false, true);
+
+        yield return StartCoroutine(WaitTutorial2());
+
+        ArrowAnimator2[4].SetBool("Tuto6", false);
+        TutoTexts[tutoIndex].SetActive(false);
+        Textzone2.SetActive(false);
+
+        //Time.timeScale = 1;
     }
     IEnumerator WaitTutorial2()
     {
