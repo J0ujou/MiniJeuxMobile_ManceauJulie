@@ -38,7 +38,7 @@ Candy Rain applique la structure d’un jeu Game and Watch tout en s’adaptant 
 L’utilisation de l’IA a été limitée. Je m’en suis servi pour des vérifications et validations de ma logique et mon développement ainsi que pour m’aider lors de mes difficultés concernant la création du tableau des high scores.
 
 ***
-// DEUXIEME PARTIE DU DEVOIR: EXPLICATION DES 2 AUTRES MINI-JEUX //
+// DEUXIEME PARTIE DU DEVOIR : EXPLICATION DES 2 AUTRES MINI-JEUX //
 ***
 
 // Troisième partie : Explication du deuxième mini-jeu : Choco Run //
@@ -53,35 +53,35 @@ Le joueur avance automatiquement et doit sauter pour éviter différents obstacl
 
 *Fonctionnalités*
 
-Dans Choco Run, le joueur touche l'écran pour sauter et éviter les obstacles. Il court sur les gelée pour rebondir et ramasse des morceaux de chewing-gum en les touchant. Trois morceaux de chewing-gum forme une bulle de chewing-gum protectrice autour du personnage. Comme une seconde chance, elle permet d'immuniser le joueur lors de sa prochaine collision dangereuse. Après une collision, la bulle se détruit. Elle est déblocable plusieurs fois dans la partie, à partir du moment où le joueur ne l'a pas. Une seconde donne un point. A chaque palier de 20 points marqués, la difficulté augmente (augmentation de la vitesse du personnage et augmentation légère de l'apparition des obstacles). Lorsque le joueur touche du chocolat ou une fourchette la partie prend fin, il a la possibilité de savoir si son nouveau score a battu son meilleur score et d’accéder à un tableau regroupant les 10 meilleures performances avec le nom des joueurs.
+Dans Choco Run, le joueur touche l'écran pour sauter et éviter les obstacles. Il court sur les gelées pour rebondir et ramasse des morceaux de chewing-gum en les touchant. Trois morceaux de chewing-gum forme une bulle de chewing-gum protectrice autour du personnage. Comme une seconde chance, elle permet d'immuniser le joueur lors de sa prochaine collision dangereuse. Après une collision, la bulle se détruit. Elle est déblocable plusieurs fois dans la partie, à partir du moment où le joueur ne l'a pas. Une seconde donne un point. A chaque palier de 20 points marqués, la difficulté augmente (augmentation de la vitesse du personnage et augmentation légère de l'apparition des obstacles). Lorsque le joueur touche du chocolat ou une fourchette la partie prend fin, il a la possibilité de savoir si son nouveau score a battu son meilleur score et d’accéder à un tableau regroupant les 10 meilleures performances avec le nom des joueurs.
 
 *Tutoriel*
 
-Un tutoriel est mit à dispostion du joueur lors de sa première partie de Choco Run qui explique les éléments essentiels à savoir pour jouer au jeu.
+Un tutoriel est mis à disposition du joueur lors de sa première partie de Choco Run qui explique les éléments essentiels à savoir pour jouer au jeu.
 
 *Feeling*
 
-Choco Run possède le même style graphique et la même musique de fond pour que le jeu ait une cohérence artistique et sonore. Chaque action du joueur et réactions sont accompagnées d'un son singulier du même genre que Candy Rain. Des pop-ups et animations accompagnent le son (comme par exemple pour la montée en niveau, avec un feu d'artifice; explosion de la bulle lors de la destruction de celle-ci...).
+Choco Run possède le même style graphique et la même musique de fond pour que le jeu ait une cohérence artistique et sonore. Chaque action du joueur et réactions sont accompagnées d'un son singulier du même genre que Candy Rain. Des pop-ups et animations accompagnent le son (comme pour la montée en niveau, avec un feu d’artifice ; explosion de la bulle lors de la destruction de celle-ci...).
 
 
 // Quatrième partie : Explication du troisième mini-jeu : Candy Merge //
 
 *Concept*
 
-Le personnage
+Le personnage, après avoir trouvé le terrain idéal, rassemble tous ses bonbons dans un bocal et commence à construire la plus grande des maisons, mais attention à ne pas perdre des bonbons utiles pour sa construction.
 
 *Mécaniques principales*
 
-Le joueur se déplace de gauche à droite au dessus du bocal de manière fluide. Il doit choisir sa position pour lâcher un bonbon à lendroit qu'il souhaite, en faisant sorte de positionner deux identiques à côtés pour en former un plus gros, ainsi de suite. Le joueur possède des cailloux qui sera obligé de mettre dans le bocal, ils prennent de la place. Quand le joueur fusionne de plus en plus, il construit un étage et active un pouvoir qui détruit les cailloux. Le but est de fusionner des bonbons de plus en plus gros pour construire le plus d'étages possibles. Si un bonbon déborde du bocal, la partie se termine.
+Le joueur se déplace de gauche à droite au-dessus du bocal de manière fluide. Il doit choisir sa position pour lâcher un bonbon à l’endroit qu'il souhaite, en faisant sorte de positionner deux identiques à côtés pour en former un plus gros, ainsi de suite. Le joueur possède des cailloux qui sera obligé de mettre dans le bocal, ils prennent de la place. Quand le joueur fusionne de plus en plus, il construit un étage et active un pouvoir qui détruit les cailloux. Le but est de fusionner des bonbons de plus en plus gros pour construire le plus d'étages possibles. Si un bonbon déborde du bocal, la partie se termine.
 
 *Fonctionnalités*
 
-Dans Candy Merge, le joueur 
+Dans Candy Merge, le joueur laisse le doigt sur l'écran et le glisse de droite à gauche (un peu comme un drag and drop) pour déplacer le personnage de droite à gauche. Il touche l'écran pour lâcher le bonbon qu'il tient entre ses mains. Il peut visualiser le prochain bonbon qu'il aura pour anticiper et peut faire tomber deux bonbons identiques à côté pour les fusionner et en faire un plus gros. Chaque fusion apporte des points. Plus la fusion de bonbon est grosse, plus elle rapporte de points : de 2 pour les plus petits, à 20 pour les plus grands. Le but est d'avoir le plus de points possibles. Pourquoi ? A chaque palier de 100 points, un étage de maison se construit et apparaît. Donc plus le joueur a de points, plus sa maison sera grande. Il faut faire attention à un type de bonbon à part : le caillou. Celui-ci n'est pas fusionnable et fait juste perdre de la place dans le bocal, point central du mini-jeu : car si un élément déborde du bocal, la partie se termine. Pour se débarrasser des cailloux, le joueur doit remplir une "jauge de pouvoir" au maximum : elle détruira tous les cailloux présents dans le bocal. Il faut 100 points pour remplir la jauge au maximum.
 
 *Tutoriel*
 
-Un tutoriel est mit à dispostion du joueur lors de sa première partie de Candy Merge qui explique les éléments essentiels à savoir pour jouer au jeu.
+Un tutoriel est mis à disposition du joueur lors de sa première partie de Candy Merge qui explique les éléments essentiels à savoir pour jouer au jeu
 
 *Feeling*
 
-Candy Merge possède le même style graphique et la même musique de fond pour que le jeu ait une cohérence artistique et sonore. Chaque action du joueur et réactions sont accompagnées d'un son singulier du même genre que Candy Rain. Des pop-ups et animations accompagnent le son (comme par exemple pour la montée en niveau, avec un feu d'artifice; explosion du bonbon lorsqu'il fusionne avec un autre; apparition d'un étage de la maison qui tombe et qui forme un nuage/onde de choc...).
+Candy Merge possède le même style graphique et la même musique de fond pour que le jeu ait une cohérence artistique et sonore. Chaque action du joueur et réactions sont accompagnées d'un son singulier du même genre que Candy Rain. Des pop-ups et animations accompagnent le son (comme pour la montée en niveau, avec un feu d'artifice ; explosion du bonbon lorsqu'il fusionne avec un autre ; apparition d'un étage de la maison qui tombe et qui forme un nuage/onde de choc...).
