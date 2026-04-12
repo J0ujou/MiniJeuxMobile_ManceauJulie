@@ -64,7 +64,7 @@ Un tutoriel est mis à disposition du joueur lors de sa première partie de Choc
 Choco Run possède le même style graphique et la même musique de fond pour que le jeu ait une cohérence artistique et sonore. Chaque action du joueur et réactions sont accompagnées d'un son singulier du même genre que Candy Rain. Des pop-ups et animations accompagnent le son (comme pour la montée en niveau, avec un feu d’artifice ; explosion de la bulle lors de la destruction de celle-ci...).
 
 
-// Quatrième partie : Explication du troisième mini-jeu : Candy Merge //
+// Quatrième partie : Explication du troisième mini-jeu : Merge to Build //
 
 *Concept*
 
@@ -76,12 +76,12 @@ Le joueur se déplace de gauche à droite au-dessus du bocal de manière fluide.
 
 *Fonctionnalités*
 
-Dans Candy Merge, le joueur laisse le doigt sur l'écran et le glisse de droite à gauche (un peu comme un drag and drop) pour déplacer le personnage de droite à gauche. Il touche l'écran pour lâcher le bonbon qu'il tient entre ses mains. Il peut visualiser le prochain bonbon qu'il aura pour anticiper et peut faire tomber deux bonbons identiques à côté pour les fusionner et en faire un plus gros. Chaque fusion apporte des points. Plus la fusion de bonbon est grosse, plus elle rapporte de points : de 2 pour les plus petits, à 20 pour les plus grands. Le but est d'avoir le plus de points possibles. Pourquoi ? A chaque palier de 100 points, un étage de maison se construit et apparaît. Donc plus le joueur a de points, plus sa maison sera grande. Il faut faire attention à un type de bonbon à part : le caillou. Celui-ci n'est pas fusionnable et fait juste perdre de la place dans le bocal, point central du mini-jeu : car si un élément déborde du bocal, la partie se termine. Pour se débarrasser des cailloux, le joueur doit remplir une "jauge de pouvoir" au maximum : elle détruira tous les cailloux présents dans le bocal. Il faut 100 points pour remplir la jauge au maximum.
+Dans Merge to Build, le joueur laisse le doigt sur l'écran et le glisse de droite à gauche (un peu comme un drag and drop) pour déplacer le personnage de droite à gauche. Il touche l'écran pour lâcher le bonbon qu'il tient entre ses mains. Il peut visualiser le prochain bonbon qu'il aura pour anticiper et peut faire tomber deux bonbons identiques à côté pour les fusionner et en faire un plus gros. Chaque fusion apporte des points. Plus la fusion de bonbon est grosse, plus elle rapporte de points : de 2 pour les plus petits, à 20 pour les plus grands. Le but est d'avoir le plus de points possibles. Pourquoi ? A chaque palier de 100 points, un étage de maison se construit et apparaît. Donc plus le joueur a de points, plus sa maison sera grande. Il faut faire attention à un type de bonbon à part : le caillou. Celui-ci n'est pas fusionnable et fait juste perdre de la place dans le bocal, point central du mini-jeu : car si un élément déborde du bocal, la partie se termine. Pour se débarrasser des cailloux, le joueur doit remplir une "jauge de pouvoir" au maximum : elle détruira tous les cailloux présents dans le bocal. Il faut 100 points pour remplir la jauge au maximum.
 
 *Tutoriel*
 
-Un tutoriel est mis à disposition du joueur lors de sa première partie de Candy Merge qui explique les éléments essentiels à savoir pour jouer au jeu
+Un tutoriel est mis à disposition du joueur lors de sa première partie de Merge to Build qui explique les éléments essentiels à savoir pour jouer au jeu
 
 *Feeling*
 
-Candy Merge possède le même style graphique et la même musique de fond pour que le jeu ait une cohérence artistique et sonore. Chaque action du joueur et réactions sont accompagnées d'un son singulier du même genre que Candy Rain. Des pop-ups et animations accompagnent le son (comme pour la montée en niveau, avec un feu d'artifice ; explosion du bonbon lorsqu'il fusionne avec un autre ; apparition d'un étage de la maison qui tombe et qui forme un nuage/onde de choc...).
+Merge to Build possède le même style graphique et la même musique de fond pour que le jeu ait une cohérence artistique et sonore. Chaque action du joueur et réactions sont accompagnées d'un son singulier du même genre que Candy Rain. Des pop-ups et animations accompagnent le son (comme pour la montée en niveau, avec un feu d'artifice ; explosion du bonbon lorsqu'il fusionne avec un autre ; apparition d'un étage de la maison qui tombe et qui forme un nuage/onde de choc...).
