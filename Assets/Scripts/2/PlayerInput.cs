@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine;
 using System;
-using Unity.VisualScripting;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 
@@ -35,38 +33,49 @@ public class PlayerInput : MonoBehaviour
 
   private void Update()
   {
-    if (Touch.activeTouches.Count <= 0)
+    if (Touch.activeTouches.Count < 0)
     {
       return;
     }
 
-    if (Input.touchCount > 0)
-    {
+    //if (Input.touchCount > 0)
+    //{
       //UnityEngine.Touch firstTouch = Input.GetTouch(0);
 
       //if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Began)
       //{
-      foreach (var touch in Touch.activeTouches)
+      if (Time.timeScale == 0)
       {
-        if (touch.phase == TouchPhase.Began)
+        return;
+      }
+      else
+      {
+        foreach (var touch in Touch.activeTouches)
         {
-          _isTouching = true;
-          if (_tapTimer <= _tapDuration)
+          if (touch.phase == TouchPhase.Began)
           {
-            if(!gameScript.notready)
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(touch.touchId))
             {
-              jump?.Invoke();
               break;
             }
+            _isTouching = true;
+            if (_tapTimer <= _tapDuration)
+            {
+              if(!gameScript.notready)
+              {
+                jump?.Invoke();
+                //break;
+              }
+            }
+          }
+          else if (touch.phase == TouchPhase.Ended)
+          {
+            _isTouching = false;
+
           }
         }
-        //else if (firstTouch.phase == (UnityEngine.TouchPhase)TouchPhase.Ended)
-        else if (touch.phase == TouchPhase.Ended)
-        {
-          _isTouching = false;
-
-        }
+        
       }
-    }
+    //}
   }
 }

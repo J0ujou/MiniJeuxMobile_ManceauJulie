@@ -4,6 +4,8 @@ public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _platformObjects;
     [SerializeField] private GellySpawner _gellySpawner;
+    [SerializeField] private BarrierSpawner _barrierSpawner; 
+    [SerializeField] private float _barrierPauseDuration = 2f;
     
     [SerializeField] private float _maxSpawnInterval = 4f;
     [SerializeField] private float _minSpawnInterval = 4f;
@@ -29,5 +31,6 @@ public class PlatformSpawner : MonoBehaviour
     {
         _gellySpawner.SpawnGelly();
         Instantiate(_platformObjects[Randomplatform()], transform.position + new Vector3(3f, 0f, 0f), Quaternion.identity);
+        _barrierSpawner.Pause(_barrierPauseDuration);
     }
 }

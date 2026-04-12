@@ -102,8 +102,12 @@ public class TutorialScript : MonoBehaviour
     {
         StartCoroutine(TutoSuika());
     }
+    
+    /// <summary>
+    /// vieux scripts que j'ai rassemblé en un
+    /// </summary>
 
-    private void Tuto()
+    /*private void Tuto()
     {
         Time.timeScale = 0;
         ArrowAnimator.SetBool("Tuto?", true);
@@ -115,7 +119,8 @@ public class TutorialScript : MonoBehaviour
 
     IEnumerator Tutorial()
     {
-        yield return new WaitForSecondsRealtime(5f);
+        //yield return new WaitForSecondsRealtime(5f);
+        yield return StartCoroutine(WaitPausable(5f));
         TutoTexts[tutoIndex-1].SetActive(false);
         Textzone.SetActive(false);
         ArrowAnimator.SetBool("Tuto?", false);
@@ -124,19 +129,63 @@ public class TutorialScript : MonoBehaviour
 
     IEnumerator WaitTutorial()
     {
-        yield return new WaitForSeconds(2f);
-    }
+        yield return StartCoroutine(WaitPausable(2f));
+        // return new WaitForSeconds(2f);
+    }*/
+    
+    // IEnumerator TutoComplet()
+    // {
+    //     Tuto();
+    //      yield return StartCoroutine(WaitTutorial());
+    //     Tuto();
+    //      yield return StartCoroutine(WaitTutorial());
+    //     Tuto();
+    // }
 
     private void StartTutorial()
     {
         StartCoroutine(TutoComplet());
     }
+    
     IEnumerator TutoComplet()
     {
-        Tuto();
-         yield return StartCoroutine(WaitTutorial());
-        Tuto();
-         yield return StartCoroutine(WaitTutorial());
-        Tuto();
+        const float displayDuration = 5f;
+        const float pauseBetweenSteps = 2f;
+        const int stepCount = 3;
+
+        for (int i = 0; i < stepCount; i++)
+        {
+            uiButtonEffect._tutoActivate = true;
+            Time.timeScale = 0f;
+            ArrowAnimator.SetBool("Tuto?", true);
+            Textzone.SetActive(true);
+            TutoTexts[tutoIndex].SetActive(true);
+
+            yield return StartCoroutine(WaitPausable(displayDuration));
+
+            TutoTexts[tutoIndex].SetActive(false);
+            tutoIndex++;
+            Textzone.SetActive(false);
+            ArrowAnimator.SetBool("Tuto?", false);
+            Time.timeScale = 1f;
+            uiButtonEffect._tutoActivate = false;
+
+            if (i < stepCount - 1)
+                yield return new WaitForSeconds(pauseBetweenSteps);
+        }
+    }
+    
+    private IEnumerator WaitPausable(float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            //elapsed += Time.unscaledDeltaTime;
+            if (uiButtonEffect.isPaused == false)
+            {
+               elapsed += Time.unscaledDeltaTime;
+            }
+            yield return null;
+        }
     }
 }

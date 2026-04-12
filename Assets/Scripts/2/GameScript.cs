@@ -1,7 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 public class GameScript : MonoBehaviour
 {
@@ -18,6 +18,7 @@ public class GameScript : MonoBehaviour
    [SerializeField] public Animator uiPresentationAnimator;
    [SerializeField] public Animator uiLevelUpAnimator;
    [SerializeField] public Animator uiFireWorkAnimator;
+   [SerializeField] BarrierSpawner _barrier;
    
    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
    [SerializeField] private AudioType _death;
@@ -87,6 +88,7 @@ public class GameScript : MonoBehaviour
                 ScorePerLevel = 0;
                 LevelUpSpeed();
                 Debug.Log("Level Up Speed");
+                _barrier._maxSpawnInterval = _barrier._maxSpawnInterval - 0.1f;
             }
             else
             {

@@ -22,8 +22,10 @@ public class UI_ButtonEffect : MonoBehaviour
     [SerializeField] PlayerInputSuika playerInputSuika;
 
     [SerializeField] private GameObject PausePanel;
+    public bool isPaused = false;
     
     public event Action Tutorial;
+    public bool _tutoActivate = false;
 
 
     private void Start()
@@ -135,10 +137,12 @@ public class UI_ButtonEffect : MonoBehaviour
         if (GameScript.AlreadyPlayed)
         {
             Time.timeScale = 1;
+            _tutoActivate = false;
         }
         else
         {
             Tutorial?.Invoke();
+            _tutoActivate = true;
         }
 
         gameScript.notready = false;
@@ -159,6 +163,7 @@ public class UI_ButtonEffect : MonoBehaviour
 
     public void Pause()
     {
+        isPaused = true;
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             gameScript.notready = true;
@@ -174,8 +179,10 @@ public class UI_ButtonEffect : MonoBehaviour
 
     public void StopPause()
     {
+        isPaused = false;
         PausePanel.SetActive(false);
-        Time.timeScale = 1;
+        if (!_tutoActivate)
+        {Time.timeScale = 1;}
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             gameScript.notready = false;

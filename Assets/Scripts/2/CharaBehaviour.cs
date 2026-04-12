@@ -63,6 +63,10 @@ public class CharaBehaviour : MonoBehaviour
         {
             charaAnimator.SetBool("IsJumping", false);
         }
+        else
+        {
+            charaAnimator.SetBool("IsJumping", true);
+        }
 
     }
 
@@ -119,6 +123,7 @@ public class CharaBehaviour : MonoBehaviour
     public void Jumping()
     {
         charaAnimator.SetBool("IsJumping", true);
+        
         if (IsGrounded && IsAlive)
         {
             CharaRigidbody.linearVelocity = new Vector2(CharaRigidbody.linearVelocity.x, _jumpHeight);

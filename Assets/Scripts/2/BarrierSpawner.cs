@@ -6,15 +6,26 @@ public class BarrierSpawner : MonoBehaviour
     [SerializeField] private GellySpawner _gellySpawner;
     [SerializeField] private CollectibleSpawner _collectibleSpawner;
     [Header("Spawing Details")]
-    [SerializeField] private float _maxSpawnInterval = 2f;
+    [SerializeField] public float _maxSpawnInterval = 2f;
     [SerializeField] private float _minSpawnInterval = 1f;
     private float _spawnInterval = 5f;
     
 
     private float timer =0f;
+    private float _pauseTimer = 0f;
 
+    private void Start()
+    {
+        _maxSpawnInterval = 2f;
+        _maxSpawnInterval= Mathf.Clamp(_maxSpawnInterval,_minSpawnInterval,_spawnInterval);
+    }
     private void Update()
     {
+        if (_pauseTimer > 0f)
+        {
+            _pauseTimer -= Time.deltaTime;
+            return;
+        }
         timer += Time.deltaTime;
         if (timer >= _spawnInterval)
         {
@@ -37,7 +48,13 @@ public class BarrierSpawner : MonoBehaviour
             //SpawnBarrier();
         }
     }
-
+    
+    public void Pause(float duration)
+    {
+        _pauseTimer = duration;
+        timer = 0f;
+    }
+    
     private int RandomBarrier()
     {
         return Random.Range(0, _barrierObjects.Length);
