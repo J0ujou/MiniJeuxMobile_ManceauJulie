@@ -158,8 +158,8 @@ public class CharacterMovement : MonoBehaviour
     { 
         if(nextSweetIndex == 11)
         {
-            currentMinXposition = minXposition + (3* sideGapForBiggerSweet);
-            currentMaxXposition = maxXposition - (3 * sideGapForBiggerSweet);
+            currentMinXposition = minXposition + (3.5f * sideGapForBiggerSweet);
+            currentMaxXposition = maxXposition - (3.5f * sideGapForBiggerSweet);
         }
         else
         {

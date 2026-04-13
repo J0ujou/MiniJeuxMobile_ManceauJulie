@@ -11041,7 +11041,10 @@ MonoBehaviour:
   SG: {fileID: 0}
   uiPresentationAnimator: {fileID: 0}
   gameScript: {fileID: 0}
+  playerInputSuika: {fileID: 0}
   PausePanel: {fileID: 7173075559592552805}
+  isPaused: 0
+  _tutoActivate: 0
 --- !u!1 &1877447550
 GameObject:
   m_ObjectHideFlags: 0
@@ -12933,11 +12936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4803752993555549814, guid: 0ac64d3a974d4e1459f91a94abc64659, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -156
+      value: -136
       objectReference: {fileID: 0}
     - target: {fileID: 4803752993555549814, guid: 0ac64d3a974d4e1459f91a94abc64659, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -67
+      value: -41
       objectReference: {fileID: 0}
     - target: {fileID: 4803752993555549814, guid: 0ac64d3a974d4e1459f91a94abc64659, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

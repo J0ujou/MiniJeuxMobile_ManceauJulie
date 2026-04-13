@@ -1153,11 +1153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4803752993555549814, guid: 0ac64d3a974d4e1459f91a94abc64659, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -156
+      value: -136
       objectReference: {fileID: 0}
     - target: {fileID: 4803752993555549814, guid: 0ac64d3a974d4e1459f91a94abc64659, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -67
+      value: -41
       objectReference: {fileID: 0}
     - target: {fileID: 4803752993555549814, guid: 0ac64d3a974d4e1459f91a94abc64659, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2382,7 +2382,7 @@ MonoBehaviour:
   IsAlive: 1
   CharaRigidbody: {fileID: 338636490}
   _jumpHeight: 10
-  _rayLength: 0.67
+  _rayLength: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -4399,7 +4399,7 @@ MonoBehaviour:
   uiPresentationAnimator: {fileID: 219767490}
   uiLevelUpAnimator: {fileID: 1874202689}
   uiFireWorkAnimator: {fileID: 1438222709}
-  _barrier: {fileID: 0}
+  _barrier: {fileID: 1454788235}
   _audioEventDispatcher: {fileID: 11400000, guid: ae8d4a8d2ac4c48418146a2c3629decb, type: 2}
   _death: 4
   _levelup: 7
@@ -4426,7 +4426,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 556726534c7cc404e867aa70a2de4b00, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.07
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8893,6 +8893,8 @@ MonoBehaviour:
   - {fileID: 609608955956372793, guid: f2026cb598f04df4a8e3ffcc202f2c5f, type: 3}
   _gellySpawner: {fileID: 20559868}
   _collectibleSpawner: {fileID: 1646926988}
+  _platformSpawner: {fileID: 1948171470}
+  _platformPauseDuration: 0
   _maxSpawnInterval: 2
   _minSpawnInterval: 0.7
 --- !u!1 &1461448906
@@ -10768,7 +10770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Marche sur les morceaux de gel\xE9e pour rebomdir"
+  m_text: "Marche sur les morceaux de gel\xE9e pour rebondir"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f6a738cfa8347f47bb4be5d30e15cb0, type: 2}
   m_sharedMaterial: {fileID: -8981680998356115575, guid: 60a556952a85e8743a0334aa7eb49c7d, type: 2}

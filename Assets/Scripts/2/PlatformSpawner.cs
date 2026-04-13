@@ -5,15 +5,21 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] private GameObject[] _platformObjects;
     [SerializeField] private GellySpawner _gellySpawner;
     [SerializeField] private BarrierSpawner _barrierSpawner; 
-    [SerializeField] private float _barrierPauseDuration = 2f;
+    [SerializeField] private float _barrierPauseDuration = 1f;
     
     [SerializeField] private float _maxSpawnInterval = 4f;
     [SerializeField] private float _minSpawnInterval = 4f;
     private float _spawnInterval = 7;
     private float timer =0f;
+    private float _pauseTimer = 0f;
 
     private void Update()
     {
+        // if (_pauseTimer > 0f)
+        // {
+        //     _pauseTimer -= Time.deltaTime;
+        //     return;
+        // }
         timer += Time.deltaTime;
         if (timer >= _spawnInterval)
         {
@@ -32,5 +38,11 @@ public class PlatformSpawner : MonoBehaviour
         _gellySpawner.SpawnGelly();
         Instantiate(_platformObjects[Randomplatform()], transform.position + new Vector3(3f, 0f, 0f), Quaternion.identity);
         _barrierSpawner.Pause(_barrierPauseDuration);
+    }
+    
+    public void Pause(float duration)
+    {
+        _pauseTimer = duration;
+        timer = 0f;
     }
 }

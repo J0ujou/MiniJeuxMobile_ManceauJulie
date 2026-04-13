@@ -5,6 +5,8 @@ public class BarrierSpawner : MonoBehaviour
     [SerializeField] private GameObject[] _barrierObjects;
     [SerializeField] private GellySpawner _gellySpawner;
     [SerializeField] private CollectibleSpawner _collectibleSpawner;
+    [SerializeField] private PlatformSpawner _platformSpawner;
+    [SerializeField] public float _platformPauseDuration = 1f;
     [Header("Spawing Details")]
     [SerializeField] public float _maxSpawnInterval = 2f;
     [SerializeField] private float _minSpawnInterval = 1f;
@@ -62,5 +64,6 @@ public class BarrierSpawner : MonoBehaviour
     public void SpawnBarrier()
     {
         Instantiate(_barrierObjects[RandomBarrier()], transform.position, Quaternion.identity);
+        //_platformSpawner.Pause(_platformPauseDuration);
     }
 }
