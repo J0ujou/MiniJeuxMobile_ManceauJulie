@@ -1733,7 +1733,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1668507905
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300036, guid: f6a737996a4a842e58ba28428e71d711, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2099,7 +2099,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1668507905
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300002, guid: f6a737996a4a842e58ba28428e71d711, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4680,7 +4680,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1668507905
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300036, guid: f6a737996a4a842e58ba28428e71d711, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11959,9 +11959,9 @@ MonoBehaviour:
   - {fileID: 3108230354405331695, guid: 03a6fd73516c29242ac739f8b7501f63, type: 3}
   _gellySpawner: {fileID: 20559868}
   _barrierSpawner: {fileID: 1454788235}
-  _barrierPauseDuration: 1
+  _barrierPauseDuration: 1.2
   _maxSpawnInterval: 7
-  _minSpawnInterval: 4
+  _minSpawnInterval: 3
 --- !u!4 &1948171471
 Transform:
   m_ObjectHideFlags: 0

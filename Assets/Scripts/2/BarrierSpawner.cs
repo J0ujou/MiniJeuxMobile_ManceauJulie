@@ -9,7 +9,7 @@ public class BarrierSpawner : MonoBehaviour
     [SerializeField] public float _platformPauseDuration = 1f;
     [Header("Spawing Details")]
     [SerializeField] public float _maxSpawnInterval = 2f;
-    [SerializeField] private float _minSpawnInterval = 1f;
+    [SerializeField] private float _minSpawnInterval = 0.7f;
     private float _spawnInterval = 5f;
     
 
@@ -18,7 +18,7 @@ public class BarrierSpawner : MonoBehaviour
 
     private void Start()
     {
-        _maxSpawnInterval = 2f;
+        _maxSpawnInterval = 1.5f;
         _maxSpawnInterval= Mathf.Clamp(_maxSpawnInterval,_minSpawnInterval,_spawnInterval);
     }
     private void Update()

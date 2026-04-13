@@ -7,11 +7,11 @@ using Random = UnityEngine.Random;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float minXposition = -2.6f;
-    [SerializeField] private float maxXposition = 2.6f;
+    [SerializeField] private float minXposition = -2.3f;
+    [SerializeField] private float maxXposition = 2.3f;
     
-    private float currentMinXposition = -2.6f;
-    private float currentMaxXposition = 2.6f;
+    private float currentMinXposition = -2.3f;
+    private float currentMaxXposition = 2.3f;
     
     [SerializeField] public SweetsList[] sweetsPrefabs;
     
@@ -158,8 +158,8 @@ public class CharacterMovement : MonoBehaviour
     { 
         if(nextSweetIndex == 11)
         {
-            currentMinXposition = minXposition + (3.5f * sideGapForBiggerSweet);
-            currentMaxXposition = maxXposition - (3.5f * sideGapForBiggerSweet);
+            currentMinXposition = minXposition + (3f * sideGapForBiggerSweet);
+            currentMaxXposition = maxXposition - (3f * sideGapForBiggerSweet);
         }
         else
         {
