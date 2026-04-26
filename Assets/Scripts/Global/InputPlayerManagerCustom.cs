@@ -10,7 +10,7 @@ public class InputPlayerManagerCustom : MonoBehaviour
   public event Action OnMoveLeft; // event dispatcher left
   public event Action OnMoveRight; // event dispatcher right
 
-  [SerializeField] private float  _tapDuration = 1.0f;
+  //[SerializeField] private float  _tapDuration = 1.0f;
   [SerializeField] UI_Panel uiPanel;
   private float _tapTimer = 0.0f;
   private bool _isTouching = false;

@@ -88,7 +88,7 @@ public class GameScript : MonoBehaviour
                 ScorePerLevel = 0;
                 LevelUpSpeed();
                 Debug.Log("Level Up Speed");
-                _barrier._maxSpawnInterval = _barrier._maxSpawnInterval - 0.1f;
+                _barrier._maxSpawnInterval = _barrier._maxSpawnInterval - 0.3f;
             }
             else
             {

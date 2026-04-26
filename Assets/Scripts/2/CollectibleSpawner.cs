@@ -3,12 +3,12 @@ using UnityEngine;
 public class CollectibleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject CollectiblePrefab;
-    [SerializeField] private float _maxSpawnInterval = 10f;
-    [SerializeField] private float _minSpawnInterval = 4f;
+    //[SerializeField] private float _maxSpawnInterval = 10f;
+    //[SerializeField] private float _minSpawnInterval = 4f;
     [SerializeField] Shield shield;
     [SerializeField] BarrierSpawner barrierSpawner;
-    private float spawnInterval = 10;
-    private float timer =0f;
+    //private float spawnInterval = 10;
+    //private float timer =0f;
     
     /*private void Update()
     {

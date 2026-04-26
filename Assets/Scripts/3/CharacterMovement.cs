@@ -114,7 +114,7 @@ public class CharacterMovement : MonoBehaviour
     {
             //Next
             int[] values = { 0, 1, 2, 3, 4, 11 };
-            if (NextnextSweetIndex != null)
+            if (NextnextSweetIndex != -1)
             {
                 nextSweet = NextnextSweet;
                 nextSweetIndex = NextnextSweetIndex;
@@ -126,6 +126,8 @@ public class CharacterMovement : MonoBehaviour
                 nextSweetIndex = values[Random.Range(0, values.Length)];
                 nextSweet = sweetsPrefabs[nextSweetIndex].prefab;
             }
+            
+            CalculateCharaBounds();
             
             //NextNext
             NextnextSweetIndex = values[Random.Range(0, 6)];
@@ -150,7 +152,6 @@ public class CharacterMovement : MonoBehaviour
             //NextnextSweetPreview.GetComponent<Rigidbody2D>().isKinematic = true;
             //NextnextSweetPreview.transform.localPosition = Vector3.zero;
             
-           CalculateCharaBounds();
 
     }
     
@@ -158,8 +159,8 @@ public class CharacterMovement : MonoBehaviour
     { 
         if(nextSweetIndex == 11)
         {
-            currentMinXposition = minXposition + (3f * sideGapForBiggerSweet);
-            currentMaxXposition = maxXposition - (3f * sideGapForBiggerSweet);
+            currentMinXposition = minXposition + (4f * sideGapForBiggerSweet);
+            currentMaxXposition = maxXposition - (4f * sideGapForBiggerSweet);
         }
         else
         {
